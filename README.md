@@ -36,4 +36,4 @@ You can reach us at [anypicker@curioussolutions.in](mailto:anypicker@curioussolu
 Copyright 2015 [Curious Solutions LLP](https://github.com/CuriousSolutions)
 
 ## License
-For more information about the license, please view [CalenStyle License](https://curioussolutions/apps/anypicker/ "CalenStyle License")
+For more information about the license, please view [AnyPicker License](https://curioussolutions/apps/anypicker/ "AnyPicker License")
