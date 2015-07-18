@@ -10,8 +10,9 @@ You can use AnyPicker in your
 - Native mobile applications using webview
 - Hybrid mobile applications created using Phonegap, Titanium etc.
 
-## Design Themes 
-CalenStyle includes many design themes for representing events in colorful & informative manner. Themes were designed specifically targeting small screen or viewing area, eg mobile devices or a small section on a web page. But they work equally well on large screens. Few theme examples are shown below:
+## Demo
+### Date Picker
+
 
 ## Dependency
 - jQuery 1.8
