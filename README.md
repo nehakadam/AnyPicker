@@ -12,7 +12,7 @@ You can use AnyPicker in your
 
 ## Demo
 ### Date Picker
-![]({{site.baseurl}}/http://curioussolutions.in/web/images/curious_logo.png)
+![](http://curioussolutions.in/web/images/curious_logo.png)
 
 ## Dependency
 - jQuery 1.8
