@@ -11,6 +11,7 @@ You can use AnyPicker in your
 - Hybrid mobile applications created using Phonegap, Titanium etc.
 
 ## Demo
+Please visit [demo page](https://curioussolutions/apps/anypicker/ "AnyPicker Demo") to view all demos. <br/>
 ### Date Picker
 ![](http://curioussolutions.in/web/images/curious_logo.png)
 
