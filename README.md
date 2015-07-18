@@ -21,11 +21,11 @@ CalenStyle includes many design themes for representing events in colorful & inf
 - Android 2.3+, iOS 6+, Windows Phone 8
 
 ## More Details
-For demo & source code please visit [AnyPicker Details](https://curioussolutions/apps/anypicker/ "AnyPicker Library Details")
+For demo & source code please visit [AnyPicker webpage](https://curioussolutions/apps/anypicker/ "AnyPicker Library Details")
 - [Features](https://curioussolutions/apps/anypicker/ "AnyPicker Features")
 - [Demo](https://curioussolutions/apps/anypicker/ "AnyPicker Demo")
 - [Download](https://curioussolutions/apps/anypicker/ "Download AnyPicker")
-- [Report issues, Ask questions](https://github.com/CuriousSolutions/CalenStyle/issues "Report Issues")
+- [Report issues, Ask questions](https://github.com/CuriousSolutions/AnyPicker/issues "Report Issues")
 
 
 ## Author
