@@ -14,6 +14,12 @@ You can use AnyPicker in your
 Please visit [demo page](https://curioussolutions/apps/anypicker/ "AnyPicker Demo") to view all demos. <br/>
 ### Date Picker
 ![](http://curioussolutions.in/apps/anypicker/content/images/github-datepicker.png)
+### DateTime Picker
+![](http://curioussolutions.in/apps/anypicker/content/images/github-datetimepicker.png)
+### Content Section Picker
+![](http://curioussolutions.in/apps/anypicker/content/images/github-github-contentsection.png)
+### Windows Phone Theme
+![](http://curioussolutions.in/apps/anypicker/content/images/github-github-windowsphone.png)
 
 ## Dependency
 - jQuery 1.8
