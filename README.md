@@ -1,7 +1,7 @@
 ## AnyPicker - Picker Library for Mobile OS ([Download](https://curioussolutions/apps/anypicker/ "Download AnyPicker"))
 <br/>
 ## What is AnyPicker?
-AAnyPicker is a Customizable jQuery Picker Library for Android, iOS & Windows Phone. eg Date Picker, Time Picker, DateTime Picker, Custom Select etc.  
+AnyPicker is a Customizable jQuery Picker Library for Android, iOS & Windows Phone. eg Date Picker, Time Picker, DateTime Picker, Custom Select etc.  
  
 ## Where can I use AnyPicker?
 You can use AnyPicker in your 
