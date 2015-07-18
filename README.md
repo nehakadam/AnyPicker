@@ -13,7 +13,7 @@ You can use AnyPicker in your
 ## Demo
 Please visit [demo page](https://curioussolutions/apps/anypicker/ "AnyPicker Demo") to view all demos. <br/>
 ### Date Picker
-![](http://curioussolutions.in/web/images/curious_logo.png)
+![](http://curioussolutions.in/apps/anypicker/content/images/github-datepicker.png)
 
 ## Dependency
 - jQuery 1.8
