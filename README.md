@@ -21,10 +21,10 @@ CalenStyle includes many design themes for representing events in colorful & inf
 - Android 2.3+, iOS 6+, Windows Phone 8
 
 ## More Details
-For demo & source code please visit [CalenStyle Details](https://curioussolutions/apps/calenstyle/ "CalenStyle Library Details")
-- [Features](https://curioussolutions/apps/calenstyle/ "CalenStyle Features")
-- [Demo](https://curioussolutions/apps/calenstyle/ "CalenStyle Demo")
-- [Download](https://curioussolutions/apps/calenstyle/ "Download CalenStyle")
+For demo & source code please visit [AnyPicker Details](https://curioussolutions/apps/anypicker/ "AnyPicker Library Details")
+- [Features](https://curioussolutions/apps/anypicker/ "AnyPicker Features")
+- [Demo](https://curioussolutions/apps/anypicker/ "AnyPicker Demo")
+- [Download](https://curioussolutions/apps/anypicker/ "Download AnyPicker")
 - [Report issues, Ask questions](https://github.com/CuriousSolutions/CalenStyle/issues "Report Issues")
 
 
@@ -32,8 +32,8 @@ For demo & source code please visit [CalenStyle Details](https://curioussolution
 [Neha Kadam](https://github.com/nehakadam): Principle Developer & Designer <br/> 
 [Lajpat Shah](https://github.com/lajpatshah): Concept & Design Contributor
 <br/> <br/> 
-You can reach us at [calenstyle@curioussolutions.in](mailto:calenstyle@curioussolutions.in) <br/> <br/> 
+You can reach us at [anypicker@curioussolutions.in](mailto:anypicker@curioussolutions.in) <br/> <br/> 
 Copyright 2015 [Curious Solutions LLP](https://github.com/CuriousSolutions)
 
 ## License
-For more information about the license, please view [CalenStyle License](https://curioussolutions/apps/calenstyle/ "CalenStyle License")
+For more information about the license, please view [CalenStyle License](https://curioussolutions/apps/anypicker/ "CalenStyle License")
