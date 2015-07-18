@@ -1,14 +1,14 @@
 ## AnyPicker - Picker Library for Mobile OS ([Download](https://curioussolutions/apps/anypicker/ "Download AnyPicker"))
 <br/>
 ## What is AnyPicker?
-AAnyPicker is a customizable jQuery picker library for Android, iOS & Windows Phone. eg Date Picker, Time Picker, DateTime Picker, Custom Select etc 
+AAnyPicker is a Customizable jQuery Picker Library for Android, iOS & Windows Phone. eg Date Picker, Time Picker, DateTime Picker, Custom Select etc.  
  
 ## Where can I use AnyPicker?
 You can use AnyPicker in your 
-- Web Applications 
-- Mobile Websites
-- Native Mobile Applications using Webview
-- Hybrid Mobile Applications created using Phonegap, Titanium etc.  
+- Web applications
+- Mobile websites
+- Native mobile applications using webview
+- Hybrid mobile applications created using Phonegap, Titanium etc.
 
 ## Design Themes 
 CalenStyle includes many design themes for representing events in colorful & informative manner. Themes were designed specifically targeting small screen or viewing area, eg mobile devices or a small section on a web page. But they work equally well on large screens. Few theme examples are shown below:
