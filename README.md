@@ -23,9 +23,6 @@ Please visit [demo page](https://curioussolutions.in/libraries/anypicker/ "AnyPi
 ### Windows Phone Theme
 ![](http://curioussolutions.in/libraries/anypicker/content/images/github-windowsphone.png)
 
-## Dependency
-- jQuery 1.8
-
 ## Browser Support
 - Chrome, Firefox, Safari, Opera, IE 10+
 - Android 2.3+, iOS 6+, Windows Phone 8
