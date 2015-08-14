@@ -11,7 +11,7 @@ You can use AnyPicker in your
 - Hybrid mobile applications created using Phonegap, Titanium etc.
 
 ## Demo
-Please visit [demo page](https://curioussolutions/libraries/anypicker/ "AnyPicker Demo") to view all demos. <br/>
+Please visit [demo page](https://curioussolutions.in/libraries/anypicker/ "AnyPicker Demo") to view all demos. <br/>
 ### Date Picker
 ![](http://curioussolutions.in/libraries/anypicker/content/images/github-datepicker.png)
 ### DateTime Picker
@@ -29,9 +29,9 @@ Please visit [demo page](https://curioussolutions/libraries/anypicker/ "AnyPicke
 - Android 2.3+, iOS 6+, Windows Phone 8
 
 ## More Details
-- [Features](https://curioussolutions/libraries/anypicker/ "AnyPicker Features")
-- [Demo](https://curioussolutions/libraries/anypicker/ "AnyPicker Demo")
-- [Download](https://curioussolutions/libraries/anypicker/ "Download AnyPicker")
+- [Features](https://curioussolutions.in/libraries/anypicker/ "AnyPicker Features")
+- [Demo](https://curioussolutions.in/libraries/anypicker/ "AnyPicker Demo")
+- [Download](https://curioussolutions.in/libraries/anypicker/ "Download AnyPicker")
 - [Report issues, Ask questions](https://github.com/CuriousSolutions/AnyPicker/issues "Report Issues")
 
 ## Author
@@ -42,4 +42,4 @@ You can reach us at [anypicker@curioussolutions.in](mailto:anypicker@curioussolu
 Copyright 2015 [Curious Solutions LLP](https://github.com/CuriousSolutions)
 
 ## License
-For more information about the license, please view [AnyPicker License](https://curioussolutions/libraries/anypicker/ "AnyPicker License")
+For more information about the license, please view [AnyPicker License](https://curioussolutions.in/libraries/anypicker/content/license.htm "AnyPicker License")
