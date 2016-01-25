@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Direction RTL - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+            	margin-bottom: 16px;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+		
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+
+		<script type="text/javascript">
+		
+			$(document).ready(function()
+			{
+				$("#ip-ap").AnyPicker(
+				{
+					mode: "datetime",
+
+					dateTimeFormat: "MMM dd,yyyy",
+
+					rtl: true
+				});
+
+				$("#ip-ios").AnyPicker(
+				{
+					mode: "datetime",
+				
+					dateTimeFormat: "MMMM d,yyyy",
+
+					rtl: true,
+
+					theme: "iOS", // "Default", "iOS", "Android", "Windows"
+
+					i18n:
+					{
+						headerTitle: "Reminder",
+						setButton: "Save"
+					}
+				});
+
+				$("#ip-android").AnyPicker(
+				{
+					mode: "datetime",
+
+					dateTimeFormat: "MMM dd,yyyy",
+
+					rtl: true,
+
+					theme: "Android" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-wp").AnyPicker(
+				{
+					mode: "datetime",
+
+					dateTimeFormat: "MMM dd,yyyy",
+
+					rtl: true,
+
+					theme: "Windows" // "Default", "iOS", "Android", "Windows"
+				});
+			});
+
+		</script>
+
+	</head>
+
+	<body dir="rtl">
+
+		<table class="input-cont">
+
+			<tr>
+
+        		<td>Date : (Default) </td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-ap" readonly>
+            	</td>
+        
+        	</tr>
+        
+        	<tr>
+
+        		<td>Date : (iOS)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-ios" readonly>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Date : (Android)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-android" readonly>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Date : (Windows) </td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-wp" readonly>
+            	</td>
+        
+        	</tr>
+
+        </table>
+	
+	</body>
+
+</html>

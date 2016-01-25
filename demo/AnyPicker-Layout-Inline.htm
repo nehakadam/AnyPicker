@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Layout Inline - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 100%;
+            }
+
+            .input-cont_text
+            {
+                padding-left: 20px;
+            }
+
+            .input-cont_label
+            {
+            	padding-top: 20px;
+            	padding-left: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+            }
+
+            .ap-ex-row
+            {
+            	text-align: center;
+            	padding: 10px 0px 10px 0px;
+            }
+
+            .ap-ex-row_icon
+            {
+            	float: left;
+            	margin-left: 150px;
+            	
+            	width: 30px;
+            	height: 30px;
+            }
+
+            .ap-ex-row_label
+            {
+            	float: left;
+            	margin-left: 20px;
+					
+            	height: 40px;
+            	line-height: 30px;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+		<script type="text/javascript" src="Currencies.js"></script>
+
+		<script type="text/javascript">
+		
+			var sArrCurrency = [];
+		
+			function getCurrencyList()
+			{
+			    for(var iTempIndex = 0; iTempIndex < currencies.length; iTempIndex++)
+			    {
+			        var oCurrency = currencies[iTempIndex];
+			        sArrCurrency.push(
+			        {
+			            val: oCurrency["code"],
+			            label: oCurrency["symbol_native"] + " - " + oCurrency["code"]
+			        });
+			    }
+			}
+
+			var io18n = {
+						headerTitle: "Select Currency"
+					},
+			oArrComponents = [
+						{
+							component: 0,
+							name: "currency",
+							label: "Currency"
+						}
+					],
+			oArrDataSource = [
+						{
+							component: 0,
+							data: sArrCurrency
+						}
+					];
+		
+			$(document).ready(function()
+			{
+				getCurrencyList();
+
+				$("#ip-de").AnyPicker(
+				{
+					mode: "select",
+
+					layout: "inline",
+
+					relativeTo: ".picker-cont-de",
+
+					inputChangeEvent: "onChange",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource		
+				});
+
+				$("#ip-ios").AnyPicker(
+				{
+					mode: "select",
+
+					layout: "inline",
+
+					relativeTo: ".picker-cont-ios",
+
+					inputChangeEvent: "onChange",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					theme: "iOS" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-android").AnyPicker(
+				{
+					mode: "select",
+
+					layout: "inline",
+
+					relativeTo: ".picker-cont-and",
+
+					inputChangeEvent: "onChange",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					theme: "Android" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-wp").AnyPicker(
+				{
+					mode: "select",
+
+					layout: "inline",
+
+					relativeTo: ".picker-cont-windows",
+
+					inputChangeEvent: "onChange",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					theme: "Windows" // "Default", "iOS", "Android", "Windows"	
+				});
+
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td class="input-cont_label">Currency : (Default)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td class="input-cont_text">
+            		<input type="text" id="ip-de" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="picker-cont-de" colspan="2"></td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="input-cont_label">Currency : (iOS)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td class="input-cont_text">
+            		<input type="text" id="ip-ios" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="picker-cont-ios" colspan="2"></td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="input-cont_label">Currency : (Android)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td class="input-cont_text">
+            		<input type="text" id="ip-android" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="picker-cont-and" colspan="2"></td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="input-cont_label">Currency : (Windows)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td class="input-cont_text">
+            		<input type="text" id="ip-wp" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td class="picker-cont-windows" colspan="2"></td>
+        
+        	</tr>
+
+        </table>
+	
+	</body>
+
+</html>

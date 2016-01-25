@@ -1,0 +1,371 @@
+/* ----------------------------------------------------------------------------- 
+
+  AnyPicker - Customizable Picker for Mobile OS
+  Version 2.0.0
+  Copyright (c)2016 Curious Solutions LLP
+  https://curioussolutions.in/libraries/anypicker/content/license.htm
+  See License Information in LICENSE file.
+
+ ----------------------------------------------------------------------------- */
+
+.ap-theme-windows.ap-layout-popup, 
+.ap-theme-windows.ap-layout-popup *
+{
+	background: #181C18;
+}
+
+.ap-theme-windows.ap-layout-popup .ap-cont
+{
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+}
+
+.ap-theme-windows .ap-bg
+{
+	font-size: 18px;
+	font-family: sans-serif;
+}
+
+.ap-theme-windows .ap-header
+{
+	position: absolute;
+  	top: 0;
+  	left: 0;
+
+  	width: 100%;
+	height: 60px;
+	line-height: 75px;
+	text-align: left;
+	text-transform: uppercase;
+
+	z-index: 2;
+}
+
+.ap-theme-windows .ap-header__title
+{
+	color: #FFFFFF;
+	font-size: 1.0em;
+}
+
+.ap-theme-windows .ap-button
+{
+	display: inline-block;
+	cursor: pointer;
+
+	letter-spacing: 0;
+  	text-align: center;
+  	font-size: 1.0em;
+
+  	height: 30px;
+  	max-width: 50px;
+
+  	margin-left: 4px;
+	margin-right: 4px;
+
+  	color: #FFFFFF;
+}
+
+.ap-theme-windows .ap-button-icon
+{
+	height: 32px;
+  	font-size: 32px;
+
+  	position: relative;
+  	bottom: -8px;
+}
+
+.ap-theme-windows .ap-button-text
+{
+  	display: inline-block;
+  	width: 100%;
+
+	font-size: 0.5em;
+	text-transform: lowercase;
+
+	position: relative;
+  	bottom: 0;
+}
+
+.ap-theme-windows .ap-content
+{
+	position: absolute;
+  	top: 0;
+  	left: 0;
+
+  	height: 100%;
+  	width: 100%;
+
+  	z-index: 1;
+
+  	max-width: none;
+}
+
+.ap-theme-windows .ap-content-top, 
+.ap-theme-windows .ap-content-bottom
+{
+	font-size: 0.9em;
+}
+
+.ap-theme-windows .ap-content-top
+{
+	position: absolute;
+  	top: 60px;
+  	width: 100%;
+
+  	z-index: 2;
+  	height: auto;
+  	padding: 4px 16px;
+}
+
+.ap-theme-windows .ap-content-bottom
+{
+	position: absolute;
+  	bottom: 59px;
+  	width: 100%;
+
+  	z-index: 2;
+  	height: auto;
+  	padding: 2px 16px;
+}
+
+.ap-theme-windows .ap-footer
+{
+	position: absolute;
+  	bottom: 0;
+  	left: 0;
+
+  	width: 100%;
+  	height: 50px;
+	padding: 0 16px;
+
+	text-align: center;
+	z-index: 2;
+}
+
+.ap-theme-windows .ap-component-gradient
+{
+	background: transparent;
+}
+
+.ap-theme-windows .ap-content-middle
+{
+	padding: 0 10px;
+}
+
+.ap-theme-windows .ap-content-switch
+{
+	display: inline-block;
+  	height: 0;
+
+	float: right;
+	margin-right: 2px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.ap-theme-windows .ap-content-switch-tab
+{
+	border: 1px solid #ADADAD;
+	font-size: 0.7em;
+	color: #ADADAD;
+}
+
+.ap-dir-ltr.ap-theme-windows .ap-content-switch-date
+{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.ap-dir-rtl.ap-theme-windows .ap-content-switch-date
+{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-left: -1px;
+}
+
+.ap-dir-ltr.ap-theme-windows .ap-content-switch-time
+{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-left: -2px;
+}
+
+.ap-dir-rtl.ap-theme-windows .ap-content-switch-time
+{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.ap-theme-windows .ap-content-switch-selected
+{
+	background: #ADADAD !important;
+	color: #181C18;
+}
+
+.ap-theme-windows .ap-component-plus, .ap-theme-ios .ap-component-minus
+{
+	color: #BDBDBD;
+}
+
+.ap-theme-windows .ap-component-label
+{
+	color: #007AFF;
+}
+
+.ap-theme-windows .ap-row
+{
+	color: #FFFFFF;
+}
+
+.ap-theme-windows .ap-row-content
+{
+	background: transparent;
+
+	font-size: 1.8em;
+	text-align: left;
+	
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+
+	padding-left: 4px;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.ap-theme-windows .ap-row-label
+{
+	background: transparent;
+	
+	font-size: 0.7em;
+	text-transform: lowercase;
+	text-align: left;
+
+	padding-left: 3px;
+
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.ap-theme-windows .ap-row-bg
+{
+	position: relative;
+	margin: 4px;
+	border: 2px solid #181C18;
+}
+
+.ap-theme-windows .ap-row-selected .ap-row-bg
+{
+	background: #4B4D4A !important;	
+	border: 2px solid #4B4D4A;
+}
+
+.ap-theme-windows .ap-row-selected .ap-row-content
+{
+	color: #FFFFFF !important;
+}
+
+.ap-theme-windows .ap-row-selected .ap-row-label
+{
+	color: #A7A8A7 !important;
+}
+
+.ap-theme-windows .ap-component:not(.ap-component-modifying) .ap-row-content
+{
+	color: transparent;
+}
+
+.ap-theme-windows .ap-component:not(.ap-component-modifying) .ap-row-label
+{
+	color: transparent;
+}
+
+.ap-theme-windows .ap-component.ap-component-modifying .ap-row-bg
+{
+	border: 2px solid #4B4D4A;
+}
+
+.ap-theme-windows .ap-component.ap-component-modifying .ap-row-content
+{
+	color: #ADADAD;
+}
+
+.ap-theme-windows .ap-component.ap-component-modifying .ap-row-label
+{
+	color: #5F5F5F;
+}
+
+.ap-theme-windows .ap-component.ap-component-modifying .ap-row-content
+{
+	color: #ADADAD;
+}
+
+.ap-theme-windows .ap-component.ap-component-modifying .ap-row-bg
+{
+	color: #000000;
+}
+
+.ap-theme-windows .ap-row-disabled
+{
+	color: #9E9E9E;
+}
+
+.ap-theme-windows .ap-component-selector
+{
+	left: 0;
+	width: 100%;
+
+	border-top: none;
+	border-bottom: none;
+
+	background: transparent;
+}
+
+@media only screen and (orientation : landscape)
+{
+	.ap-theme-windows .ap-header
+	{
+		height: 40px;
+		line-height: 40px;
+	}
+
+	.ap-theme-windows .ap-content-top
+	{
+	  	top: 31px;
+	}
+
+	.ap-theme-windows .ap-content-bottom
+	{
+	  	bottom: 60px;
+	}
+
+	.ap-theme-windows .ap-row-content
+	{
+		font-size: 1.3em;
+
+		height: 60px;
+		line-height: 60px;
+	}
+
+	.ap-theme-windows .ap-row-label
+	{
+		font-size: 0.6em;
+	}
+
+	.ap-theme-windows .ap-button-icon
+	{
+		height: 24px;
+	  	font-size: 24px;
+
+	  	position: relative;
+	  	bottom: -12px;
+	}
+}

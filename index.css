@@ -1,0 +1,99 @@
+.doc-header
+{
+	color: #88A686 !important;
+}
+
+.doc-descr
+{
+	color: #000000;
+	font-weight: 300;
+}
+
+.action-rows
+{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.link-list-icon
+{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	color: #333333;
+	float: left;
+	font-size: 25px;
+}
+
+.link-list
+{
+	margin-bottom: 50px;
+}
+
+.link-list div
+{
+	padding: 8px 10px;
+}
+
+.link-list-header
+{
+	line-height: 25px;
+	color: #333333;
+	margin-left: 10px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.link-list-header h3
+{
+	display: inline;
+	font-weight: 200;
+	font-size: 1.8em;
+}
+
+.link-list-header:hover, 
+.link-list-header:hover .link-list-icon
+{
+	color: #000000;
+}
+
+.link-list-desc
+{
+	font-size: 1.2em;
+	color: #7D7D7D;
+	text-align: justify;
+
+	margin-top: 5px;
+	margin-left: 40px;
+}
+
+.banner-cont
+{
+	background: #C5EFF7;
+	margin-top: 40px;
+}
+
+.banner
+{
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+
+.banner-header
+{
+	color: #000000;
+}
+
+.banner-desc
+{
+	color: #000000;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 992px)
+{
+	.banner div:not(:last-child)
+	{
+		padding-bottom: 20px;
+	}
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Custom RowView and Custom Output - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+            	margin-bottom: 16px;
+            }
+
+            .ap-ex-row
+            {
+            	text-align: center;
+            }
+
+            .ap-ex-icon
+            {
+            	display: inline-block;
+            	width: 30px;
+            	height: 30px;
+            	line-height: 30px !important;
+
+            	font-size: 30px;
+            	color: #E53935;
+            }
+
+            .btn-Rate
+            {
+            	display: inline-block;
+            	width: 200px;
+            	height: 30px;
+            	
+            	text-align: center;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="vendors/AnyPickerIconFont.css" />
+
+		<script type="text/javascript">
+
+			var iRating = 5, apo;
+
+			function setRating()
+			{
+				$(apo.elem).attr("data-val", iRating);
+				sTempStr = "";
+				for(var iTempIndex = 1; iTempIndex <= 5; iTempIndex++)
+				{
+					if(iTempIndex <= iRating)
+						sTempStr += "<span class='ap-ex-icon ap-ex-icon-star'></span>";
+					else
+						sTempStr += "<span class='ap-ex-icon ap-ex-icon-star-outline'></span>";
+				}
+				$(apo.elem).html(sTempStr);
+			}
+
+			var oArrComponents = [
+						{
+							name: "star",
+							component: 0
+						}
+					],
+			oArrDataSource = [
+						{
+							component: 0,
+							data: [
+
+								{
+									val: "5",
+									label: "5"
+								},
+								{
+									val: "4",
+									label: "4"
+								},
+								{
+									val: "3",
+									label: "3"
+								},
+								{
+									val: "2",
+									label: "2"
+								},
+								{
+									val: "1",
+									label: "1"
+								}
+							]
+						}
+					];
+
+			function cfOnInit()
+			{
+				apo = this;
+				setRating();
+			}
+
+			function cfRowView(iComp, iRowIndex, oSData)
+			{
+				apo = this;
+
+				var sTempStr = "<div class='ap-ex-row'>";
+				for(var iTempIndex = 4; iTempIndex >= 0; iTempIndex--)
+				{
+					if((iTempIndex - iRowIndex) > -1)
+						sTempStr += "<span class='ap-ex-icon ap-ex-icon-star'></span>";
+					else
+						sTempStr += "<span class='ap-ex-icon ap-ex-icon-star-outline'></span>";
+				}
+				sTempStr += "</div>";
+
+				return sTempStr;
+			}
+
+			function cfSetOutput(sOutput, oSelectedValues)
+			{
+				apo = this;
+
+				iRating = parseInt(sOutput);
+				setRating();
+			}
+
+			$(document).ready(function()
+			{
+				$(".btn-de-Rate").AnyPicker(
+				{
+					mode: "select",
+
+					components: oArrComponents,
+				
+					dataSource: oArrDataSource,
+
+					onInit: cfOnInit,
+
+					rowView: cfRowView,
+
+					setOutput: cfSetOutput
+				});
+
+				$(".btn-ios-Rate").AnyPicker(
+				{
+					mode: "select",
+
+					components: oArrComponents,
+				
+					dataSource: oArrDataSource,
+
+					onInit: cfOnInit,
+
+					rowView: cfRowView,
+
+					setOutput: cfSetOutput,
+
+					theme: "iOS" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$(".btn-and-Rate").AnyPicker(
+				{
+					mode: "select",
+
+					components: oArrComponents,
+				
+					dataSource: oArrDataSource,
+
+					onInit: cfOnInit,
+
+					rowView: cfRowView,
+
+					setOutput: cfSetOutput,
+
+					theme: "Android" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$(".btn-wp-Rate").AnyPicker(
+				{
+					mode: "select",
+
+					components: oArrComponents,
+				
+					dataSource: oArrDataSource,
+
+					onInit: cfOnInit,
+
+					rowView: cfRowView,
+
+					setOutput: cfSetOutput,
+
+					theme: "Windows" // "Default", "iOS", "Android", "Windows"
+				});
+				
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td>Rating : (Default)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<span class="btn-Rate btn-de-Rate"></span>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Rating : (iOS)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<span class="btn-Rate btn-ios-Rate"></span>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Rating : (Android)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<span class="btn-Rate btn-and-Rate"></span>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Rating : (Windows)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<span class="btn-Rate btn-wp-Rate"></span>
+            	</td>
+        
+        	</tr>
+
+        </table>
+
+        <!--
+        <div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+   	 	-->
+	
+	</body>
+
+</html>

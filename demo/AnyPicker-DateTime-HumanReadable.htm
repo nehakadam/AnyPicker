@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Human Readable DateTime - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+            	margin-bottom: 16px;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+
+		<script type="text/javascript">
+			
+			var dToday = new Date(), 
+			dTomorrow = new Date(dToday.getTime() + $.AnyPicker.extra.iMS.d), 
+			dYesterday = new Date(dToday.getTime() - $.AnyPicker.extra.iMS.d);
+
+			function cfParseInput(sElemValue)
+			{
+				if(sElemValue === "Today")
+					return dToday;
+				else if(sElemValue === "Tomorrow")
+					return dTomorrow;
+				else if(sElemValue === "Yesterday")
+					return dYesterday;
+				else
+					return sElemValue;
+			}
+
+			function cfFormatOutput(oArrSelected)
+			{
+				var oAP = this;
+			
+				if(oAP.compareDates(oArrSelected.date, dToday) === 0)
+					return "Today";
+				else if(oAP.compareDates(oArrSelected.date, dTomorrow) === 0)
+					return "Tomorrow";
+				else if(oAP.compareDates(oArrSelected.date, dYesterday) === 0)
+					return "Yesterday";
+				else 
+					return oAP.formatOutputDates(oArrSelected.date);
+			}
+
+			$(document).ready(function()
+			{
+				$("#ip-de-1").AnyPicker(
+				{
+					mode: "datetime",
+
+					showComponentLabel: true,
+				
+					dateTimeFormat: "MMM dd,yyyy",
+
+					inputChangeEvent: "onChange",
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput
+				});
+
+				$("#ip-ios-1").AnyPicker(
+				{
+					mode: "datetime",
+
+					showComponentLabel: true,
+				
+					dateTimeFormat: "MMMM d,yyyy",
+
+					inputChangeEvent: "onChange",
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					theme: "iOS" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-android-1").AnyPicker(
+				{
+					mode: "datetime",
+
+					showComponentLabel: true,
+				
+					dateTimeFormat: "MMM dd,yyyy",
+
+					inputChangeEvent: "onChange",
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					theme: "Android" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-wp").AnyPicker(
+				{
+					mode: "datetime",
+
+					dateTimeFormat: "MMM dd,yyyy",
+
+					inputChangeEvent: "onChange",
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					theme: "Windows" // "Default", "iOS", "Android", "Windows"
+				});
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td>DateTime : (Default)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-de-1" readonly>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>DateTime : (iOS)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-ios-1" readonly>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>DateTime : (Android)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-android-1" readonly>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>DateTime : (Windows)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-wp" readonly>
+            	</td>
+        
+        	</tr>
+
+        </table>
+	
+	</body>
+
+</html>

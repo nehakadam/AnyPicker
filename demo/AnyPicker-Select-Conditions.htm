@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Conditions in Multi Component - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+            	margin-bottom: 16px;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+		<script type="text/javascript" src="ContinentsAndCountries.js"></script>
+
+		<style type="text/css">
+
+            .ap-theme-windows .ap-row-content
+            {
+            	font-size: 1.0em;
+            }
+        
+		</style>
+
+		<script type="text/javascript">
+
+			var sContinent = "Asia", sCountry = "India", apo;
+
+			function createDataSourceForArray(sArrString, sSelected)
+			{
+				var oArrData = [], iTempIndex;
+
+				for(iTempIndex = 0; iTempIndex < sArrString.length; iTempIndex++)
+				{
+					bSelected = (sArrString[iTempIndex] === sSelected) ? true : false;
+					oArrData.push({
+						val: sArrString[iTempIndex],
+						label: sArrString[iTempIndex],
+						selected: bSelected
+					});
+				}
+
+				return oArrData;
+			}
+
+			function getContinentFromCountry(sTempCountry)
+			{
+				var sTempContinent, sArrCountries = [],
+				iTempIndex1, iTempIndex2;
+
+				for(iTempIndex1 = 0; iTempIndex1 < continents.length; iTempIndex1++)
+				{
+					sTempContinent = continents[iTempIndex1];
+					sArrCountries = countries[sTempContinent];
+					for(iTempIndex2 = 0; iTempIndex2 < sArrCountries.length; iTempIndex2++)
+					{
+						if(sTempCountry === sArrCountries[iTempIndex2])
+							return sTempContinent;
+					}
+				}
+
+				return "";
+			}
+
+			var oArrComponents = [
+						{
+							component: 0,
+							name: "continent",
+							label: "Continent"
+						},
+						{
+							component: 1,
+							name: "country",
+							label: "Country"
+						}
+					];
+
+			function getDataSource(oElem)
+			{
+				var oArrDataSource = [
+						{
+							component: 0,
+							data: createDataSourceForArray(continents, "")
+						},
+						{
+							component: 1,
+							data: createDataSourceForArray(countries[sContinent], $(oElem).val())						
+						}
+					];
+				return oArrDataSource;
+			}
+
+			function cfInit()
+			{
+				apo = this;
+			}
+
+			function cfParseInput(sElemValue)
+			{	
+				var apo = this;
+
+				if(sElemValue !== undefined && sElemValue !== null && sElemValue !== "")
+				{
+					sCountry = sElemValue;
+					sContinent = getContinentFromCountry(sCountry);
+				}
+				else
+				{
+					sContinent = continents[0];
+					sCountry = countries[sContinent][0];
+				}
+
+				return [sContinent, sCountry];
+			}
+
+			function cfFormatOutput(oSelectedValues)
+			{
+				var apo = this;						
+				return oSelectedValues.values[1].label;
+			}
+
+			function cfOnChange(iComp, iRow, oSelectedValues, sSource)
+			{
+				var apo = this;
+				console.log("Changed Value : " + iComp + " " + iRow);
+				console.log(oSelectedValues);
+				if(iComp === 0)
+				{
+					var sSelected = "";
+					sSelected = oSelectedValues.values[1].val;
+					//console.log("Selected Value = " + sSource + " : " + sSelected);
+					sContinent = oSelectedValues.values[0].label;
+					apo.setting.dataSource[1].data = createDataSourceForArray(countries[sContinent], sSelected);
+					apo.reloadComponent(1, false);
+				}
+			}
+
+			$(document).ready(function()
+			{
+				$("#ip-de").AnyPicker(
+				{
+					mode: "select",
+
+					init: cfInit,
+
+					showComponentLabel: true,
+				
+					components: oArrComponents,
+
+					dataSource: getDataSource("#ip-de"),
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					onChange: cfOnChange
+				});
+
+				$("#ip-ios").AnyPicker(
+				{
+					mode: "select",
+
+					init: cfInit,
+
+					showComponentLabel: true,
+				
+					components: oArrComponents,
+
+					dataSource: getDataSource("#ip-ios"),
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					onChange: cfOnChange,
+
+					theme: "iOS" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-android").AnyPicker(
+				{
+					mode: "select",
+
+					init: cfInit,
+
+					showComponentLabel: true,
+				
+					components: oArrComponents,
+
+					dataSource: getDataSource("#ip-android"),
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					onChange: cfOnChange,
+
+					theme: "Android" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-wp").AnyPicker(
+				{
+					mode: "select",
+
+					init: cfInit,
+
+					showComponentLabel: true,
+				
+					components: oArrComponents,
+
+					dataSource: getDataSource("#ip-wp"),
+
+					parseInput: cfParseInput,
+
+					formatOutput: cfFormatOutput,
+
+					onChange: cfOnChange,
+
+					theme: "Windows", // "Default", "iOS", "Android", "Windows"
+					
+					componentsCoverFullWidth: true
+				});
+
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td>Select Country : (Default)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-de" value="India" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Select Country : (iOS)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-ios" value="India" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Select Country : (Android)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-android" value="India" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Select Country : (Windows)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-wp" value="India" readonly />
+            	</td>
+        
+        	</tr>
+
+        </table>
+	
+	</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>HTML Select Element - AnyPicker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+                margin-bottom: 16px;
+            }
+
+            ul
+            {
+            	display: none;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+        <link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+        <link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+        <link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+        <link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+		<script type="text/javascript" src="Currencies.js"></script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function()
+			{
+				$("#ul-1").AnyPicker(
+                {
+					mode: "select",
+				
+					inputElement: "#ip-1"
+				});
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td>Sports : </td>
+
+            </tr>
+
+            <tr>
+
+            	<td>
+            		<input type="text" id="ip-1" value="Golf" readonly />
+
+            		<ul id="ul-1" data-name="game" data-label="Game">
+            			<li>Basketball</li>
+            			<li>Bowling</li>
+            			<li>Racing</li>
+            			<li data-selected="true">Golf</li>
+            			<li>Pingpong</li>
+            			<li>Snooker</li>
+            			<li>Cycling</li>
+            			<li>Rugby</li>
+            			<li>Soccer</li>
+            			<li>Swimming</li>
+            			<li>Vollyball</li>
+            		</ul>
+            	</td>
+        
+        	</tr>
+
+        </table>
+
+        <!--
+        <div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+   	 	-->
+	
+	</body>
+
+</html>

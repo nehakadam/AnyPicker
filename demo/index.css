@@ -1,0 +1,79 @@
+
+.doc-header
+{
+	color: #88A686 !important;
+}
+
+.doc-descr
+{
+	color: #000000;
+	font-weight: 300;
+	margin-top: 50px;
+}
+
+.acc-container 
+{
+	width:90%;
+	margin:30px auto;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	-o-border-radius:8px;
+	border-radius:8px;
+	overflow:hidden;
+}
+
+.acc-container-header span
+{
+	background-color: #AAAAAA;
+	color: #FFFFFF;
+	padding: 5px 15px 6px;
+	border-radius: 4px;
+}
+
+.acc-btn 
+{
+	display: block;
+	width:100%;
+	margin:0 auto;
+	padding:10px 15px;
+	cursor:pointer;
+
+	text-decoration: none;
+}
+
+.acc-btn:hover
+{
+	text-decoration: none;
+	background: #F7F5F2;
+}
+
+.btnTitle
+{
+	color: #444444;
+	font-size: 120%;
+}
+
+.acc-btn:hover .btnTitle
+{
+	color: #000000;
+}
+
+.btnDemo
+{
+	float: right;
+	border-radius: 2px;
+	padding: 2px 6px;
+	text-align: center;
+
+	text-decoration: none;
+	cursor: pointer;
+	color: #1E8BC3;
+}
+
+.btnDemo:hover, 
+.acc-btn:hover .btnDemo
+{
+	text-decoration: none;
+	cursor: pointer;
+	color: #000000;
+}

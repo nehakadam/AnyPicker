@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Non Input Element - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            .input
+            {
+            	display: inline-block;
+            	height: 30px;
+            	line-height: 30px;
+            	padding: 3px 10px;
+            	margin-bottom: 16px;
+            	vertical-align: top;
+
+            	font-size: 14px;
+            	cursor: pointer;
+            }
+
+            #ip-de
+            {
+            	width: 150px;
+            
+            	border: 2px solid #613854;
+            }
+
+            #ip-de-button
+            {
+            	text-align: center;
+
+            	width: 40px;
+            	margin-left: -7px;
+            
+            	border: 2px solid #613854;
+            	background: #613854;
+            	color: #FFFFFF;
+            }
+
+            #ip-de-button:hover
+            {
+            	color: #FD9F3E;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+
+		<script type="text/javascript">
+
+			var apo = this, sOut;
+		
+			$(document).ready(function()
+			{
+				// ------------------------- Default -------------------------
+
+				$("#ip-de").AnyPicker(
+				{
+					onInit: function()
+					{
+						apo = this;
+					},
+
+					mode: "datetime",
+
+					rowsNavigation: "scroller",
+
+					dateTimeFormat: "MMM dd,yyyy",
+
+					onSetOutput: function(sOutput, oArrSelectedValues)
+					{
+						sOut = sOutput;
+					}
+				});
+
+				$("#ip-de-button").click(function()
+				{
+					apo.showOrHidePicker(sOut);
+				});
+
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+
+			<tr>
+
+        		<td>Date : </td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<span id="ip-de" class="input"></span>
+            		<a id="ip-de-button" class="input">Show</a>
+            	</td>
+        
+        	</tr>
+        
+        </table>
+	
+	</body>
+
+</html>
