@@ -44,7 +44,7 @@ Please visit [demo page](https://curioussolutions.in/libraries/anypicker/ "AnyPi
   `bower install anypicker`
 
 ##CDN
-[CalenStyle is hosted on jsDelivr](http://www.jsdelivr.com/projects/jquery.anypicker).
+[AnyPicker is hosted on jsDelivr](http://www.jsdelivr.com/projects/jquery.anypicker).
 
 Files - Latest
 
