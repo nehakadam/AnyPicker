@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.0
+  Version 2.0.1
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -104,7 +104,7 @@ $.AnyPicker = $.AnyPicker || {
 
 	name: "AnyPicker", // Plugin Name
 
-	version: "1.0.0", // Plugin Version
+	version: "2.0.1", // Plugin Version
 
 	i18n: // Internationalization Strings
 	{ 
@@ -400,7 +400,7 @@ function AnyPicker(element, options)
 
 	apo.elem = element;
 	var sLang = (options.lang !== undefined || options.lang !== null) ? options.lang : $.CalenStyle.defaults.lang,
-	io18n = $.extend(true, {}, $.AnyPicker.defaults.i18n, options.i18n, $.AnyPicker.i18n[sLang]),
+	io18n = $.extend(true, {}, $.AnyPicker.defaults.i18n, $.AnyPicker.i18n[sLang], options.i18n),
 	oDefaults = $.extend(true, {}, $.AnyPicker.defaults);
 
 	io18n = {
@@ -2985,7 +2985,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		}
 		else
 		{
-
+			console.log("Invalid DateTimeFormat");
 		}
 	
 		apo.tmp.sArrDateTimeFormat = apo._setDateTimeFormatComponentsArray(apo.setting.dateTimeFormat);
@@ -4004,7 +4004,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		}
 
 		if(apo.tmp.sDateTimeMode === "date")
-			apo.tmp.oArrPDisable.date.push([apo.tmp.oMinMax]);
+			apo.tmp.oArrPDisable.date.push(apo.tmp.oMinMax);
 		else if(apo.tmp.sDateTimeMode === "time")
 			apo.tmp.oArrPDisable.time.push({day: [], val: [apo.tmp.oMinMax]});
 		else if(apo.tmp.sDateTimeMode === "datetime")
@@ -4268,6 +4268,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		else
 		{
 			oArrSelectedValues = apo.__getSelectedDate(true)[1];
+			
 			for(iTempIndex1 = 0; iTempIndex1 < apo.setting.dataSource.length; iTempIndex1++) // change values of one component (dataSource)
 			{
 				var oData1 = apo.setting.dataSource[iTempIndex1];
@@ -4303,7 +4304,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 							sCompName = oComp.name;
 							sCompFormat = oComp.format;
 						}
-
+						
 						if(sCompName === "date")
 						{
 							oDateToValidate.d = parseInt(sValue);
@@ -4349,7 +4350,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 
 					var dNewSelectedDate = apo.setDateInFormat({"iDate": oDateToValidate}, "");
 					var bValidDate = apo.__validateSelectedDate(dNewSelectedDate, true, false);
-				
 					if(!bValidDate)
 					{
 						$("#ap-component-" + iTempIndex1).find("#ap-row-" + iTempIndex1 + "-" + iTempIndex2).addClass("ap-row-disabled ap-row-invalid");
@@ -4441,6 +4441,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 	__validateSelectedDate: function(dNewSelectedDate, bReturnResult, bIsBefore)
 	{
 		var apo = this;
+
 		var oNewSelectedDate = apo.getDateObject(dNewSelectedDate);
 
 		if($.CF.isValid(apo.tmp.oArrPDisable))
@@ -4488,7 +4489,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			// -----------------------------------------------------------------
 
 			// Validate Date
-
 			if(!bInvalidSelected && bHasDateComponent && apo.tmp.oArrPDisable.date.length > 0)
 			{
 				for(iTempIndex1 = 0; iTempIndex1 < apo.tmp.oArrPDisable.date.length; iTempIndex1++)
@@ -4770,6 +4770,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 								bLTMin = apo.compareTimes(dNewSelectedDate, oTimeRecord.min) < 0;
 								bGTMax = apo.compareTimes(dNewSelectedDate, oTimeRecord.max) > 0;
 								bDirIsBefore = bLTMin ? true : bGTMax ? false : true;
+								
 								if(bLTMin || bGTMax)
 								{
 									if(apo.compareTimes(dNewSelectedDate, apo.tmp.selectedDate) === 0)
@@ -4936,8 +4937,8 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 					}
 					else if($.CF.isValid(oDateRecord.min) && $.CF.isValid(oDateRecord.max))
 					{
-						bLTMin = apo.compareDates(dNewSelectedDate, oDateRecord.min) < 0;
-						bGTMax = apo.compareDates(dNewSelectedDate, oDateRecord.max) > 0;
+						bLTMin = apo.compareDateTimes(dNewSelectedDate, oDateRecord.min) < 0;
+						bGTMax = apo.compareDateTimes(dNewSelectedDate, oDateRecord.max) > 0;
 						bDirIsBefore = bLTMin ? true : bGTMax ? false : true;
 						if(bLTMin || bGTMax)
 						{
@@ -5102,6 +5103,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 					dDate = new Date(dDate.getTime() - ($.AnyPicker.extra.iMS.m * apo.setting.intervals.m));
 				else
 					dDate = new Date(dDate.getTime() + ($.AnyPicker.extra.iMS.m * apo.setting.intervals.m));
+				
 				if(apo.__validateSelectedDate(dDate, true, false))
 				{
 					if((!$.CF.isValid(apo.setting.minValue) || ($.CF.isValid(apo.setting.minValue) && apo.compareDateTimes(apo.setting.minValue, dDate) <= 0)) && (!$.CF.isValid(apo.setting.maxValue) || ($.CF.isValid(apo.setting.maxValue) && apo.compareDateTimes(apo.setting.maxValue, dDate) >= 0)))
@@ -5150,6 +5152,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			if(bHasAria)
 			{
 				var dTemp = new Date(oSelectedDate.y, oSelectedDate.M, iNoOfDays, oSelectedDate.H, oSelectedDate.m, oSelectedDate.s, oSelectedDate.ms);
+				
 				apo.__validateSelectedDate(dTemp, false, true);
 				apo.__scrollToSelectedRow();
 			}
@@ -5385,7 +5388,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		dDateTime2.setMinutes(dDate2.getMinutes());
 		dDateTime2.setSeconds(dDate2.getSeconds());
 
-		apo.compareDateTimes(dDateTime1, dDateTime2);
+		return apo.compareDateTimes(dDateTime1, dDateTime2);
 	},
 
 	// Public Method

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Start Time and End Time - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+            	margin-bottom: 16px;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+
+		<script type="text/javascript">
+
+			var oAP1, oAP2;
+			var dStartD, dEndD, sStartD, sEndD;
+
+			dStartD = new Date(2015, 9, 20, 10, 0, 0, 0);
+			dEndD = new Date(2015, 9, 20, 19, 0, 0, 0);
+
+			$(document).ready(function()
+			{
+				$("#ip-start-date").AnyPicker(
+				{
+					mode: "datetime",
+
+					inputDateTimeFormat: "hh:mm AA",
+					dateTimeFormat: "hh:mm AA",
+
+					onInit: function()
+					{
+						oAP1 = this;
+						sEndD = oAP1.formatOutputDates(dEndD, "hh:mm AA");
+						oAP1.setMaximumDate(sEndD);
+						oAP1.setSelectedDate(dStartD);
+					
+						console.log("maxValue : " + sEndD);
+					},
+				
+					onSetOutput: function(sOutput, oSelectedValues)
+					{
+						sStartD = sOutput;
+						oAP2.setMinimumDate(sStartD);
+						oAP2.setSelectedDate(sStartD);
+						console.log("minValue : " + oAP2.setting.minValue);
+					}
+				});
+
+				$("#ip-end-date").AnyPicker(
+				{
+					mode: "datetime",
+
+					inputDateTimeFormat: "hh:mm AA",
+					dateTimeFormat: "hh:mm AA",
+
+					onInit: function()
+					{
+						oAP2 = this;
+
+						sStartD = oAP2.formatOutputDates(dStartD);
+						oAP2.setMinimumDate(sStartD);
+						oAP2.setSelectedDate(dEndD);
+						console.log("minValue : " + sStartD);
+					},
+				
+					onSetOutput: function(sOutput, oSelectedValues)
+					{
+						sEndD = sOutput;
+						oAP1.setMaximumDate(sEndD);
+						console.log("maxValue : " + oAP1.setting.maxValue);
+					}
+				});
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td>Start Date : </td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-start-date" readonly>
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>End Date : </td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-end-date" readonly>
+            	</td>
+        
+        	</tr>
+
+        </table>
+	
+	</body>
+
+</html>

@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.0
+  Version 2.0.1
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/
   This file is not licensed for commercial use.
@@ -579,6 +579,11 @@ var documentation = {
             "version": "2.0.0",
             "date": "Jan 25, 2016",
             "description": "Made AnyPicker free for personal use."
+        },
+        {
+            "version": "2.0.1",
+            "date": "Feb 20, 2016",
+            "description": "Fixed a bug in minValue and maxValue functionality. Added examples for minValue and maxValue functionality."
         }
     ]
 };

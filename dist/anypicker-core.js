@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.0
+  Version 2.0.1
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -100,7 +100,7 @@ $.AnyPicker = $.AnyPicker || {
 
 	name: "AnyPicker", // Plugin Name
 
-	version: "1.0.0", // Plugin Version
+	version: "2.0.1", // Plugin Version
 
 	i18n: // Internationalization Strings
 	{ 
@@ -396,7 +396,7 @@ function AnyPicker(element, options)
 
 	apo.elem = element;
 	var sLang = (options.lang !== undefined || options.lang !== null) ? options.lang : $.CalenStyle.defaults.lang,
-	io18n = $.extend(true, {}, $.AnyPicker.defaults.i18n, options.i18n, $.AnyPicker.i18n[sLang]),
+	io18n = $.extend(true, {}, $.AnyPicker.defaults.i18n, $.AnyPicker.i18n[sLang], options.i18n),
 	oDefaults = $.extend(true, {}, $.AnyPicker.defaults);
 
 	io18n = {
