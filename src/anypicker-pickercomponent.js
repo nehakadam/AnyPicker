@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.1
+  Version 2.0.2
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -254,8 +254,8 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 
 		if($.CF.compareStrings(apo.setting.rowsNavigation, "scroller+buttons") || $.CF.compareStrings(apo.setting.rowsNavigation, "buttons"))
 		{
-			$oParent.find(".ap-component-plus").on("click." + apo.setting.timestamp, oData, apo._onClickButtonPlus);
-			$oParent.find(".ap-component-minus").on("click." + apo.setting.timestamp, oData, apo._onClickButtonMinus);
+			$oParent.find(".ap-component-plus").on("click." + apo.setting.timestamp, oData, apo._onClickButtonMinus);
+			$oParent.find(".ap-component-minus").on("click." + apo.setting.timestamp, oData, apo._onClickButtonPlus);
 		}
 
 		$oCompCont.on("keydown." + apo.setting.timestamp, oData, apo._onKeyDown);
@@ -555,11 +555,11 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 
 		if(e.keyCode === 38) // Up Arrow Key
 		{
-	        apo._scrollToPosition("key", (apo.tmp.iOffset + apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
+	        apo._scrollToPosition("key", (apo.tmp.iOffset - apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
 	    }
 	    else if(e.keyCode === 40) // Down Arrow Key
 	    {
-	        apo._scrollToPosition("key", (apo.tmp.iOffset - apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
+	    	apo._scrollToPosition("key", (apo.tmp.iOffset + apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
 	    }
 	},
 

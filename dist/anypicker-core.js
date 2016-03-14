@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.1
+  Version 2.0.2
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -100,7 +100,7 @@ $.AnyPicker = $.AnyPicker || {
 
 	name: "AnyPicker", // Plugin Name
 
-	version: "2.0.1", // Plugin Version
+	version: "2.0.2", // Plugin Version
 
 	i18n: // Internationalization Strings
 	{ 

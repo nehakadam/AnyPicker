@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.1
+  Version 2.0.2
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/
   This file is not licensed for commercial use.
@@ -584,6 +584,11 @@ var documentation = {
             "version": "2.0.1",
             "date": "Feb 20, 2016",
             "description": "Fixed a bug in minValue and maxValue functionality. Added examples for minValue and maxValue functionality."
+        },
+        {
+            "version": "2.0.2",
+            "date": "Mar 14, 2016",
+            "description": "Slight improvement in scrolling experience on Windows Phone 10. Improved button click functionality when rowsNavigation is set to buttons or scroller+buttons."
         }
     ]
 };
