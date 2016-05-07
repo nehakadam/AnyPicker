@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.2
+  Version 2.0.3
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -104,7 +104,7 @@ $.AnyPicker = $.AnyPicker || {
 
 	name: "AnyPicker", // Plugin Name
 
-	version: "2.0.2", // Plugin Version
+	version: "2.0.3", // Plugin Version
 
 	i18n: // Internationalization Strings
 	{ 
@@ -1986,7 +1986,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 	    }
 	    else if(e.keyCode === 40) // Down Arrow Key
 	    {
-	    	apo._scrollToPosition("key", (apo.tmp.iOffset + apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
+	        apo._scrollToPosition("key", (apo.tmp.iOffset + apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
 	    }
 	},
 
@@ -2364,7 +2364,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		{
 			sElemId = "#ap-row-" + iComp + "-" + iTempIndex;
 			$oElem = $(apo.tmp.overlaySelector).find(sElemId);
-
+		
 			if(oDataSource[iTempIndex].val === sNewValue)
 			{
 				oDataSource[iTempIndex].selected = true;
@@ -3377,6 +3377,9 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 					iChars = 0;
 				else if(sCompFormat === "MM")
 					iChars = 2;
+
+				iStartValue++;
+				iEndValue++;
 			
 				for(iTempIndex = iStartValue; iTempIndex <= iEndValue; iTempIndex++)
 				{
@@ -4494,7 +4497,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 				for(iTempIndex1 = 0; iTempIndex1 < apo.tmp.oArrPDisable.date.length; iTempIndex1++)
 				{
 					oDateRecord = apo.tmp.oArrPDisable.date[iTempIndex1];
-				
+
 					if($.CF.isValid(oDateRecord.val))
 					{
 						if(apo.compareDates(dNewSelectedDate, oDateRecord.val) === 0)
@@ -4520,6 +4523,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 					{
 						if(apo.compareDates(dNewSelectedDate, oDateRecord.start) >= 0 && apo.compareDates(dNewSelectedDate, oDateRecord.end) <= 0)
 						{
+							
 							if(apo.compareDates(dNewSelectedDate, apo.tmp.selectedDate) === 0)
 							{
 								bInvalidSelected = true;

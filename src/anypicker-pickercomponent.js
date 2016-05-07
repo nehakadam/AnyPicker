@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.2
+  Version 2.0.3
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -559,7 +559,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 	    }
 	    else if(e.keyCode === 40) // Down Arrow Key
 	    {
-	    	apo._scrollToPosition("key", (apo.tmp.iOffset + apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
+	        apo._scrollToPosition("key", (apo.tmp.iOffset + apo.setting.rowHeight), true, "#ap-component-" + apo.tmp.iScrollingComp + " .ap-component-data");
 	    }
 	},
 
@@ -937,7 +937,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		{
 			sElemId = "#ap-row-" + iComp + "-" + iTempIndex;
 			$oElem = $(apo.tmp.overlaySelector).find(sElemId);
-
+		
 			if(oDataSource[iTempIndex].val === sNewValue)
 			{
 				oDataSource[iTempIndex].selected = true;
