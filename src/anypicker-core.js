@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.3
+  Version 2.0.4
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -656,7 +656,7 @@ AnyPicker.prototype = {
 			{
 				if($.CF.compareStrings(apo.setting.mode, "datetime"))
 				{
-					apo.setting.selectedDate = sElemValue;						
+					apo.setting.selectedDate = sElemValue;
 				}
 				else if($.CF.compareStrings(apo.setting.mode, "select"))
 				{

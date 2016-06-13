@@ -1,7 +1,7 @@
 {
     "name": "anypicker",
 
-    "version": "2.0.3",
+    "version": "2.0.4",
 
     "license" : "See License Information in LICENSE file",
 
@@ -37,7 +37,7 @@
         "email": "nehakadam9@gmail.com"
     },
 
-    "main": ["dist/anypicker.min.js", "dist/anypicker-all.min.css"],
+    "main": "dist/anypicker.min.js",
 
     "peerDependencies": {
         "jquery": ">=1.0.0"

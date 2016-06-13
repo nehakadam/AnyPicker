@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.3
+  Version 2.0.4
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/
   This file is not licensed for commercial use.
@@ -594,6 +594,11 @@ var documentation = {
             "version": "2.0.3",
             "date": "May 7, 2016",
             "description": "Fixed a bug in minValue and maxValue functionality."
+        },
+        {
+            "version": "2.0.4",
+            "date": "June 13, 2016",
+            "description": "Added Norwegian Bokmål Locale File"
         }
     ]
 };

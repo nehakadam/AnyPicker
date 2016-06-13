@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.3
+  Version 2.0.4
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -834,7 +834,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			var oElem = $(apo.tmp.oScrollingComp).get(0);
 			iOffset = apo._getOffset(oElem, false);
 			iPosMod = iOffset % apo.setting.rowHeight;
-			
+		
 			if(iPosMod !== 0 || (iPosMod === 0 && (iOffset > iMinTopPos || iOffset < -iMaxTopPos)))
 			{
 				iOffset = Math.abs(iOffset);
@@ -1135,7 +1135,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 
 		$oAllRows.attr("aria-selected", "false");
 		$oAllRows.removeClass("ap-row-selected");
-
+	
 		$oThisRow.attr("aria-selected", "true");
 		$oThisRow.addClass("ap-row-selected");
 	},
@@ -1165,7 +1165,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			for(iTempIndex = 0; iTempIndex < apo.tmp.numOfComp; iTempIndex++)
 			{
 				$oSelectedElem = $(apo.tmp.overlaySelector).find("#ap-component-" + iTempIndex + " .ap-row-selected");
-			
+				
 				oArrSelectedValues.push(
 				{
 					component: iTempIndex,

@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.3
+  Version 2.0.4
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -187,7 +187,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 
 		apo.parseDisableValues();
 		apo.setSelectedDate(apo.setting.selectedDate);
-	
+
 		var bMMMMddYYYY = apo.setting.dateTimeFormat.match(/(MMMM).*(dd|d).*(yyyy|YYYY)/);
 		if(apo.tmp.sArrDateTimeFormat.length > 0)
 		{
