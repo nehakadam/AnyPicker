@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.4
+  Version 2.0.5
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -185,8 +185,8 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		if(apo.tmp.diffDateTimeFormats)
 			apo.tmp.sInputDateTimeRegex = apo._createDateTimeRegex(apo.tmp.sArrInputDateTimeFormat);
 
-		apo.parseDisableValues();
 		apo.setSelectedDate(apo.setting.selectedDate);
+		apo.parseDisableValues();
 
 		var bMMMMddYYYY = apo.setting.dateTimeFormat.match(/(MMMM).*(dd|d).*(yyyy|YYYY)/);
 		if(apo.tmp.sArrDateTimeFormat.length > 0)
@@ -555,6 +555,12 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 				{
 					iStartValue = oMin.M;
 					iEndValue = oMax.M;
+
+					if(sCompFormat === "M" || sCompFormat === "MM")
+					{
+						iStartValue++;
+						iEndValue++;
+					}
 				}
 			}
 
@@ -565,9 +571,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 				else if(sCompFormat === "MM")
 					iChars = 2;
 
-				iStartValue++;
-				iEndValue++;
-			
 				for(iTempIndex = iStartValue; iTempIndex <= iEndValue; iTempIndex++)
 				{
 					oArrData.push(
@@ -1193,6 +1196,81 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 				apo.tmp.oMinMax.max = dMax;
 		}
 
+
+		var bIsOutOfBounds = false;
+		if($.CF.isValid(apo.tmp.oMinMax.min) && $.CF.isValid(apo.tmp.oMinMax.max))
+		{
+			if(apo.tmp.sDateTimeMode === "date")
+			{
+				if(!(apo.compareDates(apo.tmp.selectedDate, apo.tmp.oMinMax.min) >= 1 && apo.compareDates(apo.tmp.selectedDate, apo.tmp.oMinMax.max) <= -1))
+					bIsOutOfBounds = true;
+			}
+			else if(apo.tmp.sDateTimeMode === "time")
+			{
+				if(!(apo.compareTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.min) >= 1 && apo.compareTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.max) <= -1))
+					bIsOutOfBounds = true;
+			}
+			else if(apo.tmp.sDateTimeMode === "datetime")
+			{
+				if(!(apo.compareDateTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.min) >= 1 && apo.compareDateTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.max) <= -1))
+					bIsOutOfBounds = true;
+			}
+
+			if(bIsOutOfBounds)
+			{
+				apo.setting.selectedDate = new Date(apo.tmp.oMinMax.min);
+				apo.tmp.selectedDate = new Date(apo.tmp.oMinMax.min);
+			}
+		}
+		else if($.CF.isValid(apo.tmp.oMinMax.min))
+		{
+			if(apo.tmp.sDateTimeMode === "date")
+			{
+				if(apo.compareDates(apo.tmp.selectedDate, apo.tmp.oMinMax.min) < -1)
+					bIsOutOfBounds = true;
+			}
+			else if(apo.tmp.sDateTimeMode === "time")
+			{
+				if(apo.compareTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.min) < -1)
+					bIsOutOfBounds = true;
+			}
+			else if(apo.tmp.sDateTimeMode === "datetime")
+			{
+				if(apo.compareDateTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.min) < -1)
+					bIsOutOfBounds = true;
+			}
+
+			if(bIsOutOfBounds)
+			{
+				apo.setting.selectedDate = new Date(apo.tmp.oMinMax.min);
+				apo.tmp.selectedDate = new Date(apo.tmp.oMinMax.min);
+			}
+		}
+		else if($.CF.isValid(apo.tmp.oMinMax.max))
+		{
+			if(apo.tmp.sDateTimeMode === "date")
+			{
+				if(apo.compareDates(apo.tmp.selectedDate, apo.tmp.oMinMax.max) > 1)
+					bIsOutOfBounds = true;
+			}
+			else if(apo.tmp.sDateTimeMode === "time")
+			{
+				if(apo.compareTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.max) > 1)
+					bIsOutOfBounds = true;
+			}
+			else if(apo.tmp.sDateTimeMode === "datetime")
+			{
+				if(apo.compareDateTimes(apo.tmp.selectedDate, apo.tmp.oMinMax.max) > 1)
+					bIsOutOfBounds = true;
+			}
+
+			if(bIsOutOfBounds)
+			{
+				apo.setting.selectedDate = new Date(apo.tmp.oMinMax.max);
+				apo.tmp.selectedDate = new Date(apo.tmp.oMinMax.max);
+			}
+		}
+
 		if(apo.tmp.sDateTimeMode === "date")
 			apo.tmp.oArrPDisable.date.push(apo.tmp.oMinMax);
 		else if(apo.tmp.sDateTimeMode === "time")
@@ -1203,7 +1281,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		if($.CF.isValid(apo.setting.disableValues))
 		{
 			// Parse Days
-
 			if($.CF.isValid(apo.setting.disableValues.day) && apo.setting.disableValues.day.length > 0)
 			{
 				for(iTempIndex = 0; iTempIndex < apo.setting.disableValues.day.length; iTempIndex++)
@@ -1216,7 +1293,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			}
 
 			// Parse Dates
-
 			if($.CF.isValid(apo.setting.disableValues.date) && apo.setting.disableValues.date.length > 0)
 			{
 				for(iTempIndex = 0; iTempIndex < apo.setting.disableValues.date.length; iTempIndex++)
@@ -1261,7 +1337,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			}
 
 			// Parse Times
-
 			if($.CF.isValid(apo.setting.disableValues.time) && apo.setting.disableValues.time.length > 0)
 			{
 				for(iTempIndex1 = 0; iTempIndex1 < apo.setting.disableValues.time.length; iTempIndex1++)
@@ -1326,7 +1401,6 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			}
 
 			// Parse DateTimes
-
 			if($.CF.isValid(apo.setting.disableValues.datetime) && apo.setting.disableValues.datetime.length > 0)
 			{
 				for(iTempIndex1 = 0; iTempIndex1 < apo.setting.disableValues.datetime.length; iTempIndex1++)
