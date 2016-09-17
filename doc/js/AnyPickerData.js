@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.5
+  Version 2.0.6
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/
   This file is not licensed for commercial use.
@@ -172,7 +172,7 @@ var documentation = {
         {
             "name": "i18n",
             "tags": ["i18n"],
-            "default": "<pre>\n{\n    headerTitle: \"SELECT\",\n    setButton: \"SET\",\n    clearButton: \"CLEAR\",\n    nowButton: \"NOW\",\n    closeButton: \"CLOSE\",\n    veryShortDays: [\"Su\", \"Mo\", \"Tu\", \"We\", \"Th\", \"Fr\", \"Sa\"],\n    shortDays: [\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\"],\n    fullDays: [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"],\n    shortMonths: [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"],\n    fullMonths: [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"],\n    numbers: [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"],\n    meridiem: \n    {\n        a: [\"a\", \"p\"],\n        aa: [\"am\", \"pm\"],\n        A: [\"A\", \"P\"],\n        AA: [\"AM\", \"PM\"]\n    }\n}\n</pre>",
+            "default": "<pre>\n{\n    headerTitle: \"SELECT\",\n    setButton: \"SET\",\n    clearButton: \"CLEAR\",\n    nowButton: \"NOW\",\n    closeButton: \"CLOSE\",\n    veryShortDays: [\"Su\", \"Mo\", \"Tu\", \"We\", \"Th\", \"Fr\", \"Sa\"],\n    shortDays: [\"Sun\", \"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\", \"Sat\"],\n    fullDays: [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"],\n    shortMonths: [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"],\n    fullMonths: [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"],\n    numbers: [\"0\", \"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"],\n    meridiem: \n    {\n        a: [\"a\", \"p\"],\n        aa: [\"am\", \"pm\"],\n        A: [\"A\", \"P\"],\n        AA: [\"AM\", \"PM\"]\n    },\n    componentLabels: \n    {\n        date: \"Date\",\n        day: \"Day\",\n        month: \"Month\",\n        year: \"Year\",\n        hours: \"Hours\",\n        minutes: \"Minutes\",\n        seconds: \"Seconds\",\n        meridiem: \"Meridiem\"\n    }\n}\n</pre>",
             "datatype": "Object",
             "options": "",
             "description": "<code>i18n</code> contains a list of locale specific string. The strings listed in <code>i18n</code> should be specified in the \"anypicker-i18n.js\".",
@@ -604,6 +604,11 @@ var documentation = {
             "version": "2.0.5",
             "date": "June 22, 2016",
             "description": "Fixed a bug(#8) in Month values display for M and MM formats which was caused while fixing a bug in minValue and maxValue functionality in Version 2.0.3."
+        },
+        {
+            "version": "2.0.6",
+            "date": "Sep 17, 2016",
+            "description": "Added a new functionality to set localized component labels. Modified Documentation."
         }
     ]
 };

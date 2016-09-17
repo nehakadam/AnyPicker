@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.5
+  Version 2.0.6
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -33,6 +33,17 @@ $.AnyPicker = $.extend(true, $.AnyPicker, {
 				aa: ["am", "pm"],
 				A: ["A", "P"],
 				AA: ["AM", "PM"]
+			},
+
+			componentLabels: {
+				date: "Date",
+				day: "Day",
+				month: "Month",
+				year: "Year",
+				hours: "Hours",
+				minutes: "Minutes",
+				seconds: "Seconds",
+				meridiem: "Meridiem"
 			}
 		},
 
@@ -373,7 +384,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			if(sCompFormat === "d" || sCompFormat === "dd")
 			{
 				oComp.name = "date";
-				oComp.label = "Date";
+				oComp.label = apo.setting.i18n.componentLabels.date;
 				oComp.type = "date";
 
 				if($.CF.compareStrings(apo.setting.theme, "iOS"))
@@ -388,13 +399,13 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			else if(sCompFormat === "DD" || sCompFormat === "DDD" || sCompFormat === "DDDD")
 			{
 				oComp.name = "day";
-				oComp.label = "Day";
+				oComp.label = apo.setting.i18n.componentLabels.day;
 				oComp.type = "date";
 			}
 			else if(sCompFormat === "M" || sCompFormat === "MM" || sCompFormat === "MMM" || sCompFormat === "MMMM")
 			{
 				oComp.name = "month";
-				oComp.label = "Month";
+				oComp.label = apo.setting.i18n.componentLabels.month;
 				oComp.type = "date";
 
 				if($.CF.compareStrings(apo.setting.theme, "iOS"))
@@ -409,7 +420,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			else if(sCompFormat === "y" || sCompFormat === "Y" || sCompFormat === "yyyy" || sCompFormat === "Y" || sCompFormat === "YYYY")
 			{
 				oComp.name = "year";
-				oComp.label = "Year";
+				oComp.label = apo.setting.i18n.componentLabels.year;
 				oComp.type = "date";
 
 				if($.CF.compareStrings(apo.setting.theme, "iOS"))
@@ -424,25 +435,25 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			else if(sCompFormat === "H" || sCompFormat === "HH" || sCompFormat === "h" || sCompFormat === "hh")
 			{
 				oComp.name = "hours";
-				oComp.label = "Hours";
+				oComp.label = apo.setting.i18n.componentLabels.hours;
 				oComp.type = "time";
 			}
 			else if(sCompFormat === "m" || sCompFormat === "mm")
 			{
 				oComp.name = "minutes";
-				oComp.label = "Minutes";
+				oComp.label = apo.setting.i18n.componentLabels.minutes;
 				oComp.type = "time";
 			}
 			else if(sCompFormat === "s" || sCompFormat === "ss")
 			{
 				oComp.name = "seconds";
-				oComp.label = "Seconds";
+				oComp.label = apo.setting.i18n.componentLabels.seconds;
 				oComp.type = "time";
 			}
 			else if(sCompFormat === "aa" || sCompFormat === "a" || sCompFormat === "AA" || sCompFormat === "A")
 			{
 				oComp.name = "meridiem";
-				oComp.label = "Meridiem";
+				oComp.label = apo.setting.i18n.componentLabels.meridiem;
 				oComp.type = "time";
 			}
 			else

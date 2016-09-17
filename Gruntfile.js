@@ -16,7 +16,11 @@ module.exports = function(grunt)
 		      	'src/anypicker-pickercomponent.js',
 		      	'src/anypicker-select.js',
 		      	'src/anypicker-datetime.js'], 
-	sArrCustomFileSource = [];
+	sArrCustomFileSource = [
+		'src/anypicker-core.js',
+      	'src/anypicker-pickercomponent.js',
+      	'src/anypicker-datetime.js'
+	];
 
 	grunt.initConfig(
 	{
@@ -131,7 +135,7 @@ module.exports = function(grunt)
 			CustomUglify: 
 			{
 		      	src: 'src/anypicker-custom.js',
-		      	dest: 'src/anypicker-custom.min.js',
+		      	dest: 'dist/anypicker-custom.min.js',
 		      	nonull: true
 		    }
 		},

@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.5
+  Version 2.0.6
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -40,6 +40,7 @@ $.AnyPicker = $.extend(true, $.AnyPicker, {
 		numOfComp: 0,
 		selectedValues: {},
 
+		bIsManualDraggingAfterShow: true,
 		bIsManualDragging: false,
 		bIsTouched: false,
 		iTS: 0,
@@ -321,7 +322,10 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		var apo = e.data.apo;
 
 		if(!apo.tmp.bIsManualDragging)
+		{
+			apo.tmp.bIsManualDraggingAfterShow = true;
 			apo.tmp.bIsManualDragging = true;
+		}
 		apo.tmp.bIsTouched = true;
 		apo.tmp.bEnd = false;
 		apo.tmp.iPos = apo._getTouchPosition(e);

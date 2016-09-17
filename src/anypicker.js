@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.5
+  Version 2.0.6
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -708,17 +708,25 @@ AnyPicker.prototype = {
 		if($(apo.tmp.overlaySelector).length > 0)
 			apo._hidePicker();
 		else
-			apo._showPicker();
+		{
+			if(!$.CF.isValid(apo.setting.onBeforeShowPicker))
+				apo._showPicker();
+			else
+			{
+				if(apo.setting.onBeforeShowPicker.call(apo))
+					apo._showPicker();
+			}
+		}
 	},
 
 	_showPicker: function()
 	{
 		var apo = this;
-	
-		apo.tmp.sOrientation = apo._getDeviceOrientation();
 
-		if($.CF.isValid(apo.setting.onBeforeShowPicker))
-			apo.setting.onBeforeShowPicker.call(apo);
+		// if($.CF.isValid(apo.setting.onBeforeShowPicker))
+		// 	apo.setting.onBeforeShowPicker.call(apo);
+
+		apo.tmp.sOrientation = apo._getDeviceOrientation();
 
 		var sTemp = "",
 		bAddSectionHeader = (($.CF.compareStrings(apo.setting.layout, "popup") || $.CF.compareStrings(apo.setting.layout, "popover")) && apo.setting.viewSections.header.length > 0),
@@ -882,6 +890,8 @@ AnyPicker.prototype = {
 		apo._addViewSectionComponents();
 		apo.__initComponents();
 		apo._adjustPicker();
+
+		apo.tmp.bIsManualDraggingAfterShow = false;
 
 		if($.CF.compareStrings(apo.setting.mode, "datetime") && apo.tmp.sDateTimeMode === "datetime")
 			apo._setDateTimeTabs(apo.tmp.sDateTimeTab);
@@ -1281,7 +1291,7 @@ AnyPicker.prototype = {
 
 		if($.CF.isValid(apo.setting.formatOutput))
 		{
-			sOutput = apo.setting.formatOutput.call(apo, apo.tmp.selectedValues);
+			sOutput = apo.setting.formatOutput.call(apo, apo.tmp.selectedValues, apo.tmp.bIsManualDraggingAfterShow);
 		}
 		else
 		{
@@ -1296,7 +1306,7 @@ AnyPicker.prototype = {
 			}
 			else if($.CF.compareStrings(apo.setting.mode, "datetime"))
 			{
-				sOutput = apo.formatOutputDates(apo.tmp.selectedValues.date);
+				sOutput = apo.formatOutputDates(apo.tmp.selectedValues.date, apo.tmp.bIsManualDraggingAfterShow);
 			}
 		}
 
@@ -1331,7 +1341,7 @@ AnyPicker.prototype = {
 		}
 
 		if($.CF.isValid(apo.setting.setOutput))
-			apo.setting.setOutput.call(apo, sOutput, apo.tmp.selectedValues);
+			apo.setting.setOutput.call(apo, sOutput, apo.tmp.selectedValues, apo.tmp.bIsManualDraggingAfterShow);
 		else
 		{
 			if(apo.setting.inputElement !== null)
@@ -1348,7 +1358,7 @@ AnyPicker.prototype = {
 			}
 
 			if($.CF.isValid(apo.setting.onSetOutput))
-				apo.setting.onSetOutput.call(apo, sOutput, apo.tmp.selectedValues);
+				apo.setting.onSetOutput.call(apo, sOutput, apo.tmp.selectedValues, apo.tmp.bIsManualDraggingAfterShow);
 		}
 	},
 
@@ -1467,6 +1477,7 @@ $.AnyPicker = $.extend(true, $.AnyPicker, {
 		numOfComp: 0,
 		selectedValues: {},
 
+		bIsManualDraggingAfterShow: true,
 		bIsManualDragging: false,
 		bIsTouched: false,
 		iTS: 0,
@@ -1748,7 +1759,10 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		var apo = e.data.apo;
 
 		if(!apo.tmp.bIsManualDragging)
+		{
+			apo.tmp.bIsManualDraggingAfterShow = true;
 			apo.tmp.bIsManualDragging = true;
+		}
 		apo.tmp.bIsTouched = true;
 		apo.tmp.bEnd = false;
 		apo.tmp.iPos = apo._getTouchPosition(e);
@@ -2846,6 +2860,17 @@ $.AnyPicker = $.extend(true, $.AnyPicker, {
 				aa: ["am", "pm"],
 				A: ["A", "P"],
 				AA: ["AM", "PM"]
+			},
+
+			componentLabels: {
+				date: "Date",
+				day: "Day",
+				month: "Month",
+				year: "Year",
+				hours: "Hours",
+				minutes: "Minutes",
+				seconds: "Seconds",
+				meridiem: "Meridiem"
 			}
 		},
 
@@ -3186,7 +3211,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			if(sCompFormat === "d" || sCompFormat === "dd")
 			{
 				oComp.name = "date";
-				oComp.label = "Date";
+				oComp.label = apo.setting.i18n.componentLabels.date;
 				oComp.type = "date";
 
 				if($.CF.compareStrings(apo.setting.theme, "iOS"))
@@ -3201,13 +3226,13 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			else if(sCompFormat === "DD" || sCompFormat === "DDD" || sCompFormat === "DDDD")
 			{
 				oComp.name = "day";
-				oComp.label = "Day";
+				oComp.label = apo.setting.i18n.componentLabels.day;
 				oComp.type = "date";
 			}
 			else if(sCompFormat === "M" || sCompFormat === "MM" || sCompFormat === "MMM" || sCompFormat === "MMMM")
 			{
 				oComp.name = "month";
-				oComp.label = "Month";
+				oComp.label = apo.setting.i18n.componentLabels.month;
 				oComp.type = "date";
 
 				if($.CF.compareStrings(apo.setting.theme, "iOS"))
@@ -3222,7 +3247,7 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			else if(sCompFormat === "y" || sCompFormat === "Y" || sCompFormat === "yyyy" || sCompFormat === "Y" || sCompFormat === "YYYY")
 			{
 				oComp.name = "year";
-				oComp.label = "Year";
+				oComp.label = apo.setting.i18n.componentLabels.year;
 				oComp.type = "date";
 
 				if($.CF.compareStrings(apo.setting.theme, "iOS"))
@@ -3237,25 +3262,25 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 			else if(sCompFormat === "H" || sCompFormat === "HH" || sCompFormat === "h" || sCompFormat === "hh")
 			{
 				oComp.name = "hours";
-				oComp.label = "Hours";
+				oComp.label = apo.setting.i18n.componentLabels.hours;
 				oComp.type = "time";
 			}
 			else if(sCompFormat === "m" || sCompFormat === "mm")
 			{
 				oComp.name = "minutes";
-				oComp.label = "Minutes";
+				oComp.label = apo.setting.i18n.componentLabels.minutes;
 				oComp.type = "time";
 			}
 			else if(sCompFormat === "s" || sCompFormat === "ss")
 			{
 				oComp.name = "seconds";
-				oComp.label = "Seconds";
+				oComp.label = apo.setting.i18n.componentLabels.seconds;
 				oComp.type = "time";
 			}
 			else if(sCompFormat === "aa" || sCompFormat === "a" || sCompFormat === "AA" || sCompFormat === "A")
 			{
 				oComp.name = "meridiem";
-				oComp.label = "Meridiem";
+				oComp.label = apo.setting.i18n.componentLabels.meridiem;
 				oComp.type = "time";
 			}
 			else

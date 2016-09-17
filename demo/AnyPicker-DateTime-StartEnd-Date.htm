@@ -58,23 +58,24 @@
 
 					inputDateTimeFormat: "dd/MM/yyyy",
 					dateTimeFormat: "MMM dd,yyyy",
+					maxRows: 200,
 
 					onInit: function()
 					{
 						oAP1 = this;
-						sEndD = oAP1.formatOutputDates(dEndD, "dd MM yyyy");
+						sEndD = oAP1.formatOutputDates(dEndD, "dd/MM/yyyy");
 						oAP1.setMaximumDate(sEndD);
 						oAP1.setSelectedDate(dStartD);
-					
-						console.log("maxValue : " + sEndD);
+						
+						console.log("maxValue : " + sEndD + " " + oAP1.tmp.selectedDate);
 					},
 				
 					onSetOutput: function(sOutput, oSelectedValues)
 					{
 						sStartD = sOutput;
 						oAP2.setMinimumDate(sStartD);
-						oAP2.setSelectedDate(sStartD);
-						console.log("minValue : " + oAP2.setting.minValue);
+						oAP2.setSelectedDate(dStartD);
+						console.log("minValue : " + oAP2.setting.minValue + " " + oAP1.tmp.selectedDate);
 					}
 				});
 

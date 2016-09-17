@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.5
+  Version 2.0.6
   Copyright (c)2016 Curious Solutions LLP
   https://curioussolutions.in/libraries/anypicker/content/license.htm
   See License Information in LICENSE file.
@@ -704,17 +704,25 @@ AnyPicker.prototype = {
 		if($(apo.tmp.overlaySelector).length > 0)
 			apo._hidePicker();
 		else
-			apo._showPicker();
+		{
+			if(!$.CF.isValid(apo.setting.onBeforeShowPicker))
+				apo._showPicker();
+			else
+			{
+				if(apo.setting.onBeforeShowPicker.call(apo))
+					apo._showPicker();
+			}
+		}
 	},
 
 	_showPicker: function()
 	{
 		var apo = this;
-	
-		apo.tmp.sOrientation = apo._getDeviceOrientation();
 
-		if($.CF.isValid(apo.setting.onBeforeShowPicker))
-			apo.setting.onBeforeShowPicker.call(apo);
+		// if($.CF.isValid(apo.setting.onBeforeShowPicker))
+		// 	apo.setting.onBeforeShowPicker.call(apo);
+
+		apo.tmp.sOrientation = apo._getDeviceOrientation();
 
 		var sTemp = "",
 		bAddSectionHeader = (($.CF.compareStrings(apo.setting.layout, "popup") || $.CF.compareStrings(apo.setting.layout, "popover")) && apo.setting.viewSections.header.length > 0),
@@ -878,6 +886,8 @@ AnyPicker.prototype = {
 		apo._addViewSectionComponents();
 		apo.__initComponents();
 		apo._adjustPicker();
+
+		apo.tmp.bIsManualDraggingAfterShow = false;
 
 		if($.CF.compareStrings(apo.setting.mode, "datetime") && apo.tmp.sDateTimeMode === "datetime")
 			apo._setDateTimeTabs(apo.tmp.sDateTimeTab);
@@ -1277,7 +1287,7 @@ AnyPicker.prototype = {
 
 		if($.CF.isValid(apo.setting.formatOutput))
 		{
-			sOutput = apo.setting.formatOutput.call(apo, apo.tmp.selectedValues);
+			sOutput = apo.setting.formatOutput.call(apo, apo.tmp.selectedValues, apo.tmp.bIsManualDraggingAfterShow);
 		}
 		else
 		{
@@ -1292,7 +1302,7 @@ AnyPicker.prototype = {
 			}
 			else if($.CF.compareStrings(apo.setting.mode, "datetime"))
 			{
-				sOutput = apo.formatOutputDates(apo.tmp.selectedValues.date);
+				sOutput = apo.formatOutputDates(apo.tmp.selectedValues.date, apo.tmp.bIsManualDraggingAfterShow);
 			}
 		}
 
@@ -1327,7 +1337,7 @@ AnyPicker.prototype = {
 		}
 
 		if($.CF.isValid(apo.setting.setOutput))
-			apo.setting.setOutput.call(apo, sOutput, apo.tmp.selectedValues);
+			apo.setting.setOutput.call(apo, sOutput, apo.tmp.selectedValues, apo.tmp.bIsManualDraggingAfterShow);
 		else
 		{
 			if(apo.setting.inputElement !== null)
@@ -1344,7 +1354,7 @@ AnyPicker.prototype = {
 			}
 
 			if($.CF.isValid(apo.setting.onSetOutput))
-				apo.setting.onSetOutput.call(apo, sOutput, apo.tmp.selectedValues);
+				apo.setting.onSetOutput.call(apo, sOutput, apo.tmp.selectedValues, apo.tmp.bIsManualDraggingAfterShow);
 		}
 	},
 

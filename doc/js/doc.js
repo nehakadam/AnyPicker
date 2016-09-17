@@ -103,7 +103,7 @@ $(document).ready(function()
 
 	$(".parameter-link").click(function(e) 
 	{
-		e.preventDefault();
+		// e.preventDefault();
         $("html, body").stop().animate(
         {
             scrollTop: $($(this).attr("href")).offset().top - 70  		

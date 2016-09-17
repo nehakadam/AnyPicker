@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Basic Picker - AnyPicker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+			body
+			{
+				margin: 0px;
+			}
+
+			.input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+            	width: 200px;
+            	height: 30px;
+            	padding: 3px 10px;
+
+            	margin-bottom: 16px;
+            }
+
+            .ap-ex-row
+            {
+            	text-align: center;
+            	padding: 10px 0px 10px 0px;
+            }
+
+            .ap-ex-row_icon
+            {
+            	float: left;
+            	margin-left: 150px;
+            	
+            	width: 30px;
+            	height: 30px;
+            }
+
+            .ap-ex-row_label
+            {
+            	float: left;
+            	margin-left: 20px;
+					
+            	height: 40px;
+            	line-height: 30px;
+            }
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-font.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker.css" />
+
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-ios.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-android.css" />
+		<link rel="stylesheet" type="text/css" href="../src/anypicker-windows.css" />
+
+		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../src/anypicker.js"></script>
+		<script type="text/javascript" src="Currencies.js"></script>
+
+		<script type="text/javascript">
+
+			var sArrCurrency = [];
+
+			function getCurrencyList()
+			{
+			    for(var iTempIndex = 0; iTempIndex < currencies.length; iTempIndex++)
+			    {
+			        var oCurrency = currencies[iTempIndex];
+			        sArrCurrency.push(
+			        {
+			            val: oCurrency["code"],
+			            label: oCurrency["symbol_native"] + " - " + oCurrency["code"]
+			        });
+			    }
+			}
+		
+			var io18n = {
+						headerTitle: "Select Currency"
+					},
+			oArrComponents = [
+						{
+							component: 0,
+							name: "currency",
+							label: "Currency"
+						}
+					],
+			oArrDataSource = [
+						{
+							component: 0,
+							data: sArrCurrency
+						}
+					];
+		
+			$(document).ready(function()
+			{
+				getCurrencyList();
+
+				var oArrValues = [], oArrLabels = [];
+				$("#ip-de").AnyPicker(
+				{
+					mode: "select",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					onBeforeShowPicker: function()
+					{
+						return true;
+					},
+
+					setOutput: function(sOutLabel, oArrSelected, bIsManualChange)
+					{
+						var apo = this;
+
+						console.log("Value Changed : " + bIsManualChange + " : " + sOutLabel);
+						console.log("oArrSelected : " + JSON.stringify(oArrSelected));
+
+						if(bIsManualChange)
+						{
+							for(var i = 0; i < oArrSelected.values.length; i++)
+							{
+								oArrValues[i] = oArrSelected.values[i].val;
+								oArrLabels[i] = oArrSelected.values[i].label;
+							}
+
+							console.log("oArrValues : " + JSON.stringify(oArrValues));
+							console.log("oArrLabels : " + JSON.stringify(oArrLabels));
+						}
+
+						$(apo.elem).val("");
+					}
+				});
+
+				$("#ip-ios").AnyPicker(
+				{
+					mode: "select",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					onBeforeShowPicker: function()
+					{
+						return true;
+					},
+
+					setOutput: function(sOutLabel, oArrSelected, bIsManualChange)
+					{
+						var apo = this;
+
+						console.log("Value Changed : " + bIsManualChange + " : " + sOutLabel);
+						console.log("oArrSelected : " + JSON.stringify(oArrSelected));
+
+						if(bIsManualChange)
+						{
+							for(var i = 0; i < oArrSelected.values.length; i++)
+							{
+								oArrValues[i] = oArrSelected.values[i].val;
+								oArrLabels[i] = oArrSelected.values[i].label;
+							}
+
+							console.log("oArrValues : " + JSON.stringify(oArrValues));
+							console.log("oArrLabels : " + JSON.stringify(oArrLabels));
+						}
+
+						$(apo.elem).val("");
+					},
+
+					theme: "iOS" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-android").AnyPicker(
+				{
+					mode: "select",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					onBeforeShowPicker: function()
+					{
+						return true;
+					},
+
+					setOutput: function(sOutLabel, oArrSelected, bIsManualChange)
+					{
+						var apo = this;
+
+						console.log("Value Changed : " + bIsManualChange + " : " + sOutLabel);
+						console.log("oArrSelected : " + JSON.stringify(oArrSelected));
+
+						if(bIsManualChange)
+						{
+							for(var i = 0; i < oArrSelected.values.length; i++)
+							{
+								oArrValues[i] = oArrSelected.values[i].val;
+								oArrLabels[i] = oArrSelected.values[i].label;
+							}
+
+							console.log("oArrValues : " + JSON.stringify(oArrValues));
+							console.log("oArrLabels : " + JSON.stringify(oArrLabels));
+						}
+
+						$(apo.elem).val("");
+					},
+
+					theme: "Android" // "Default", "iOS", "Android", "Windows"
+				});
+
+				$("#ip-wp").AnyPicker(
+				{
+					mode: "select",
+
+					i18n: io18n,
+				
+					components: oArrComponents,
+
+					dataSource: oArrDataSource,
+
+					onBeforeShowPicker: function()
+					{
+						return true;
+					},
+
+					setOutput: function(sOutLabel, oArrSelected, bIsManualChange)
+					{
+						var apo = this;
+
+						console.log("Value Changed : " + bIsManualChange + " : " + sOutLabel);
+						console.log("oArrSelected : " + JSON.stringify(oArrSelected));
+
+						if(bIsManualChange)
+						{
+							for(var i = 0; i < oArrSelected.values.length; i++)
+							{
+								oArrValues[i] = oArrSelected.values[i].val;
+								oArrLabels[i] = oArrSelected.values[i].label;
+							}
+
+							console.log("oArrValues : " + JSON.stringify(oArrValues));
+							console.log("oArrLabels : " + JSON.stringify(oArrLabels));
+						}
+
+						$(apo.elem).val("");
+					},
+				
+					theme: "Windows", // "Default", "iOS", "Android", "Windows"
+					
+					componentsCoverFullWidth: true
+				});
+
+
+				setInterval(function()
+				{
+					console.log("oArrValues Final : " + JSON.stringify(oArrValues));
+					console.log("oArrLabels Final : " + JSON.stringify(oArrLabels));
+
+				}, (5000));
+
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<table class="input-cont">
+        
+        	<tr>
+
+        		<td>Currency : (Default)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-de" value="" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Currency : (iOS)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-ios" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Currency : (Android)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-android" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        	<tr>
+
+        		<td>Currency : (Windows)</td>
+
+        	</tr>
+
+        	<tr>
+
+            	<td>
+            		<input type="text" id="ip-wp" value="₹ - INR" readonly />
+            	</td>
+        
+        	</tr>
+
+        </table>
+	
+	</body>
+
+</html>
