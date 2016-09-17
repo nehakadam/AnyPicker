@@ -42,6 +42,16 @@
 			aa: ["am", "pm"],
 			A: ["A", "P"],
 			AA: ["AM", "PM"]
+		},
+		componentLabels: {
+			date: "Date",
+			day: "Day",
+			month: "Month",
+			year: "Year",
+			hours: "Hours",
+			minutes: "Minutes",
+			seconds: "Seconds",
+			meridiem: "Meridiem"
 		}
 	
     });
