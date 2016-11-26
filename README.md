@@ -51,4 +51,4 @@ Files - Particular Version
 [Neha Kadam](https://github.com/nehakadam): Developer<br/> 
 [Lajpat Shah](https://github.com/lajpatshah): Concept & Design Contributor
 <br/> <br/> 
-Copyright 2016 [Curious Solutions LLP](https://github.com/CuriousSolutions)
+Copyright 2016 [Lajpat Shah](https://github.com/lajpatshah)
