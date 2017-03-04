@@ -1,0 +1,41 @@
+
+/* TEAM */
+
+	
+
+Name: Lajpat Shah
+	
+Site: lajpatshah.in
+
+Github: https://github.com/lajpatshah
+
+LinkedIn: https://in.linkedin.com/in/lajpat
+Twitter: @lajpat
+
+	
+
+Name: Neha Kadam
+Github: https://github.com/nehakadam
+
+LinkedIn: https://www.linkedin.com/in/kadamneha
+Twitter: @nehakadam
+
+
+
+
+
+
+/* SITE */
+
+
+
+Last update: March 04, 2017
+
+Language: English
+
+Doctype: HTML5
+
+Technologies: HTML, CSS, Javascript, jQuery, grunt
+Softwares & Tools: Sublime Text, FileZilla
+
+Location: Mumbai, India

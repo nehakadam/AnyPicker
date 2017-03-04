@@ -1,90 +1,689 @@
 <!DOCTYPE html>
 
-<html>
-	
+<html lang="en">
+
 	<head>
 	
-		<title>Index - AnyPicker</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-		<script type="text/javascript" src="demo/vendors/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="demo/vendors/bootstrap.min.js"></script>
-    	<link rel="stylesheet" type="text/css" href="demo/vendors/bootstrap.min.css" />
+		<title>AnyPicker - Custom Picker Library (Date, Time, Rating etc) - iOS, Android & Windows</title>
 
-    	<link rel="stylesheet" type="text/css" href="doc/css/common.css" />
-		<link rel="stylesheet" type="text/css" href="doc/css/AP-Portal-Font.css" />
-		<link rel="stylesheet" type="text/css" href="index.css" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="HandheldFriendly" content="true" /> 
+		<meta name="MobileOptimized" content="320" />
 
-		<script type="text/javascript">
-			$(document).ready(function()
-			{
-				$("#footer-year").text(new Date().getFullYear());
-			});
-		</script>
+		<meta name="author" content="Lajpat Shah, Neha Kadam" />
+		<meta name="description" content="AnyPicker is a customizable jQuery Picker Library for Mobile OS. Create custom mobile pickers (Date, Time, Rating etc) for iOS, Android & Windows. Use pre-built pickers like Date Picker, Time Picker, Date Time Picker, etc" />
+		<meta name="keywords" content="jQuery, Picker, Library, Plugin, Date Picker, Time Picker, DateTime Picker, Date, Time, Date Time Picker, Bootstrap, Mobile, Android, iOS, Windows, Rating, CSS, HTML" />
+		<meta name="distribution" content="global" />
+		<meta name="copyright" content="Lajpat Shah" />
+		<meta name="robots" content="index, follow" />
+		<link type="text/plain" rel="author" href="humans.txt" />
+
+		<link rel="stylesheet" type="text/css" href="content/css/01161601.min.css" />
+		<script type="text/javascript" src="content/js/01161601.min.js"></script>
 	
 	</head>
+
+	<body data-spy="scroll" data-target=".navbar-custom">
 	
-	<body>
+		<nav class="navbar navbar-custom navbar-fixed-top navbar-dynamic" role="navigation">
+    	
+			<div class="container">
+			
+				<div class="navbar-header page-scroll">
+				
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				
+					<a class="navbar-ap" href="#home">
+						AnyPicker
+					</a>
+				
+				</div>
+			
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+				
+					<ul class="nav navbar-nav">
+						<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+						<li class="hidden">
+							<a href="#home"></a>
+						</li>
+						<li class="page-scroll">
+							<a href="https://github.com/nehakadam/AnyPicker/zipball/master">Download</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#features">Features</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#demo">Demo</a>
+						</li>
+
+					
+						<li class="collapse-footerlink">
+							<a href="https://github.com/nehakadam/AnyPicker/wiki/Roadmap">Roadmap</a>
+						</li>
+						<li class="collapse-footerlink">
+							<a href="https://github.com/nehakadam/AnyPicker/releases">Changelog</a>
+						</li>
+						<li class="collapse-footerlink">
+							<a href="https://github.com/nehakadam/AnyPicker/issues">Report Bug</a>
+						</li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+		
+		</nav>
 	
-		<div class="jumbotron">
-		
-			<h1 class="doc-header text-center">AnyPicker</h1>
-		
-			<h3 class="doc-descr text-center">Customizable jQuery Picker for Mobile OS</h3>
-		
-		</div>
+		<section id="home">
 
-		<div class="container">
+			<div class="container">
+			
+				<header class="jumbotron">
 
-			<div class="row link-list">
+					<h3 class="doc-desc text-center">Customizable Picker for Mobile OS</h3>
 
-				<div class="col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-					<a class="link-list-header" href="https://curioussolutions.in/libraries/AnyPicker/index.html#demo">
-						<i class="link-list-icon ap-po-icon-star"></i>
-						<h3>View Screenshots</h3>
-					</a>
-					<p class="link-list-desc">
-						Get a quick glance of various styles & themes available to customize AnyPicker.
-					</p>
+				</header>
+
+				<div id="showcase">
+
+					<div class="showcase-elem-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div id="showcase-elem-1" class="showcase-elem">
+							<img src="content/images/DateTime-iOS.png"/>
+						</div>
+					</div>
+
+					<div class="showcase-elem-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div id="showcase-elem-2" class="showcase-elem">
+							<img src="content/images/Time-Android-hhmmAA.jpg" />
+						</div>
+					</div>
+
+					<div class="showcase-elem-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div id="showcase-elem-3" class="showcase-elem">
+							<img src="content/images/Rating-Default.jpg"/>
+						</div>
+					</div>
+
 				</div>
-
-				<div class="col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-					<a class="link-list-header" href="demo/index.html">
-						<i class="link-list-icon ap-po-icon-star"></i>
-						<h3>Working Demo</h3>
-					</a>
-					<p class="link-list-desc">
-						Open on supported browser on your device (desktop/mobile) to get first hand experience of using AnyPicker. Try all possible customizations using listed examples for getting a better understanding of AnyPicker.
-					</p>
-				</div>
-
-				<div class="col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8">
-					<a class="link-list-header" href="doc/doc.htm">
-						<i class="link-list-icon ap-po-icon-star"></i>
-						<h3>Documentation</h3>
-					</a>
-					<p class="link-list-desc">
-						Explore full set of functions, parameters, settings etc using a well documented AnyPicker manual. In case you still have doubts, please contact us via contact form on our website or email your doubts at anypicker@curioussolutions.in.
-					</p>
+			
+				<div class="row text-center">
+				
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<a id="button-github" class="button-rounded bordered-black bordered-black-thick home-buttons" href="https://github.com/nehakadam/AnyPicker/zipball/master"><i class="ap-po-icon-github"></i>Download</a>
+					</div>
+				
 				</div>
 
 			</div>
+  		
+		</section>
+	
+		<section id="features">
+		
+			<div class="container">
 
-		</div>
+				<div class="text-center section-header">Features</div>
 
-		<div class="banner-cont">
+			</div>
+		
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-CodeFoundation"></i>
+							<h3 class="feature-title">Code Foundation</h3>
+							<p>
+								AnyPicker is built using HTML, CSS & jQuery. Library source code is well structured & has elaborate naming conventions reducing learning curve to use AnyPicker.
+							</p>
+						</article>
+					</div>
+				
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-NativeUXPerformance"></i>
+							<h3 class="feature-title">Native UX & Performance</h3>
+							<p>
+								A truly native UI experience. Pixel perfect design, handcrafted for iOS & Android. Also included a clean default theme for custom design. Well suited for all mobile device orientations with smooth performance & touch gesture interactions.
+							</p>
+						</article>
+					</div>
+				
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-iOS"></i>
+							<h3 class="feature-title">iOS Special</h3>
+							<p>
+								Seamless automatic view conversion for iOS devices. View picker as a dialog box on iPhone & as a popover on iPad without writing a single line of extra code.
+							</p>
+						</article>
+					</div>
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-Android"></i>
+							<h3 class="feature-title">Android Special</h3>
+							<p>
+								Built with special attention to high resolution devices like Kindle HDX & Galaxy S4. AnyPicker renders correctly on such devices for both type of orientations, giving a perfect native feel for your app or mobile website. Another android specialty included is up & down spinner buttons for tap navigation.
+							</p>
+						</article>
+					</div>
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-WindowsPhone"></i>
+							<h3 class="feature-title">Windows Phone Special</h3>
+							<p>
+								Precise gesture calibrations using Microsoft prescribed pointer-based events. Appreciate perfectly designed full-screen Windows Phone styled picker layout.
+							</p>
+						</article>
+					</div>
+				
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-TitleConfiguration"></i>
+							<h3 class="feature-title">Title Configuration</h3>
+							<p>
+								Configure picker title to display different types of label value. Fixed label, change label as per scrolling picker value or write your own function for title label using any picker value.
+							</p>
+						</article>
+					</div>
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-ReadyToUse"></i>
+							<h3 class="feature-title">Ready To Use Pickers</h3>
+							<p>
+								Embed pre-built pickers in your application for quick turnaround. Date Picker, Time Picker, Date Time Picker, Month-Year Picker, Star Rating Picker, Currency Picker & Country Picker.
+							</p>
+						</article>
+					</div>
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-CoreIncludes"></i>
+							<h3 class="feature-title">Core Includes</h3>
+							<p>
+								AnyPicker includes basic features like RTL support, Localization support enabled, common layouts (Dialog box, Relative, Inline, Popover, Fixed-Top & Fixed-Bottom), change input value on scroll, default set of buttons (Done/Set, Cancel, Clear, Now), etc.
+							</p>
+						</article>
+					</div>
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+						<article>
+							<i class="ap-po-icon-CrossPlatform"></i>
+							<h3 class="feature-title">Cross Platform</h3>
+							<p>
+								Works smoothly on iOS 7+, Android 4+ & Windows Phone 8+ webview. Need a mobile site with native pickers? No worries, AnyPicker supports Chrome, Firefox, Opera & IE11+ browsers on both desktop & mobile.
+							</p>
+						</article>
+					</div>
+									
+				</div>
+
+			</div>
+        
+		</section>
+	
+		<section id="demo">
+		
+			<div class="container">
+
+				<div class="text-center section-header">Demo</div>
+		
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Date Picker</span>
+
+						<span class="tag-native">Pure Native</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-date">
+
+						<div class="row">
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/Date-iOS.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/Date-Android.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/Date-Default.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								<div class="content-configure">
+									<span class="label-configure">configure: </span>
+									<span>
+									min-max date, user-defined date formats, disable date or date range (invalid dates), short & long month names, RTL support
+									</span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Time Picker</span>
+
+						<span class="tag-native">Pure Native</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-time">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/Time-iOS-hhmmAA.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/Time-Android-HHmm.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/Time-Default-hhmmAA.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								<div class="content-configure">
+									<span class="label-configure">configure: </span>
+									<span>
+									12/24 hour format, RTL support, user-defined time formats, disable time or time range
+									</span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+			
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">DateTime Picker</span>
+
+						<span class="tag-native">Pure Native</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-datetime">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/DateTime-iOS.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/DateTime-Android-MMMddYYYYHHmm.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/DateTime-Default-MMMddYYYYhhmmAA.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								Clean segmented tab design gives a consistent experience in portrait & landscape orientation.
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+			
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Content Section</span>
+
+						<span class="tag-custom">Customizable</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-MMMMYYYY">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/MMMMYYYY-iOS.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/MMMMYYYY-Android.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/MMMMYYYY-Default.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								<div class="content-configure">
+									<span class="label-configure">configure: </span>
+									<span>
+									top section, bottom section
+									</span>
+								</div>
+								Provision to embed content in 2 different sections of picker. Each section can be individually customized to show any styled UI component (text, buttons, check box etc) as per user specific design.
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Multi-Component & Style</span>
+
+						<span class="tag-custom">Customizable</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-MultiComp">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/DHM-iOS.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/DHM-Android.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/DHM-Default.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								<div class="content-configure">
+									<span class="label-configure">configure: </span>
+									<span>
+									number of components, component label, width, alignment, value range, custom button
+									</span>
+								</div>
+								Create your own custom styled picker. Set component label, style the component, include content section etc to create any kind of picker you want, e.g. Day-Hour-Min picker having human readable output format (in-built function).
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Component Logic</span>
+
+						<span class="tag-custom">Customizable</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-MultiCompReload">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/Country-iOS.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/Country-Android.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/Country-Default.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								Provision to write conditional component logic for any type of picker you want to create, eg Show countries from Asia. Control behavior of one component from another on change event.
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Select</span>
+
+						<span class="tag-custom">Customizable</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-Rating">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-iOS">
+									<img src="content/images/Rating-iOS.png"/>
+								</div>
+								<div class="demo-screen-title">iOS</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Android">
+									<img src="content/images/Sport-Android.jpg" />
+								</div>
+								<div class="demo-screen-title">Android</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Default">
+									<img src="content/images/Currency-Default.jpg"/>
+								</div>
+								<div class="demo-screen-title">Default</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								Create any type of single select picker using &lt;select&gt;, &lt;ul&gt; & &lt;ol&gt; tags. Configure rowView to create different picker layouts using values from any of these 3 html tags, e.g. use webfont icons with text.
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<hr/>
+
+				<div class="demo-cont">
+
+					<div class="demo-header">
+
+						<span class="demo-title">Windows Phone 8+</span>
+
+						<span class="tag-custom">Pure Native</span>
+
+					</div>
+
+					<div class="demo-content" id="demo-WindowsPhone">
+
+						<div class="row">
+						
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Windows">
+									<img src="content/images/DateTime-Windows-MMMddYYYYHHmm.jpg"/>
+								</div>
+								<div class="demo-screen-title">Windows</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Windows">
+									<img src="content/images/Sport-Windows.jpg" />
+								</div>
+								<div class="demo-screen-title">Windows</div>
+							</div>
+
+							<div class="demo-screen-out col-xs-12 col-sm-12 col-md-4 col-lg-4">
+								<div class="demo-screen demo-Windows">
+									<img src="content/images/MMMMYYYY-Windows.jpg"/>
+								</div>
+								<div class="demo-screen-title">Windows</div>
+							</div>
+
+						</div>
+
+						<div class="row">
+							<div class="demo-content-desc col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+
+								Windows Phone styled full-screen picker layout, with gesture carefully calibrated using Microsoft prescribed pointer-based events. Example above shows placement of segmented tab, single select component, component label & provision to write text at top & bottom inside picker.
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		
+		</section>
+
+		<section id="calenstyle-banner">
 
 			<div class="container">
 
-				<div class="row text-center banner">
+				<div class="row text-center">
 
-					<div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+					<div class="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
 
-						<h2 class="banner-header">CalenStyle - Event Calendar</h2>
+						<h1 class="calenstyle-header">CalenStyle - Event Calendar</h1>
 
-						<h4 class="banner-desc">Responsive Calendar Library for Web & Mobile</h4>
+						<p class="calenstyle-desc">Responsive Calendar Library for Web & Mobile</p>
 
-						<a class="button-rounded bordered-black calenstyle-button" href="https://curioussolutions.in/libraries/calenstyle">Explore</a>
+						<a class="button-rounded bordered-black calenstyle-button" href="https://nehakadam.github.io/CalenStyle">Explore</a>
+
+					</div>
+
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 calenstyle-screen-cont">
+
+						<img class="calenstyle-screen" src="content/images/CS-Timeline.png"/>
 
 					</div>
 
@@ -92,17 +691,70 @@
 
 			</div>
 
-		</div>
+		</section>
 
-		<div id="footerlinks">
+		<section id="downloads">
+
 			<div class="container">
 
-				<a href="https://github.com/CuriousSolutions/AnyPicker/wiki/Roadmap">Roadmap</a>
-				<a href="https://github.com/CuriousSolutions/AnyPicker/releases">Changelog</a>
-				<a href="https://github.com/CuriousSolutions/AnyPicker/issues">Report Bug</a>
-				<a href="https://curioussolutions.in/libraries/anypicker/content/license.htm">License</a>
-				<a href="https://curioussolutions.in/libraries/anypicker/content/faq.htm">FAQ</a>
+				<div class="text-center section-header">Quick Start</div>
 
+				<div class="row">
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+
+			    		<h3>Installations</h3>
+
+			    		<p>
+			    			<b>npm - </b> <pre>npm install anypicker</pre>
+			    		</p>
+
+			    		<p>
+			    			<b>bower - </b> <pre>bower install anypicker</pre>
+			    		</p>
+
+				    </div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+
+			    		<h3>CDN</h3>
+
+		    			<pre>
+&lt;link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.anypicker/latest/anypicker-all.min.css" /&gt;
+&lt;script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/latest/anypicker.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/latest/i18n/anypicker-i18n.js"&gt;&lt;/script&gt;
+</pre>
+		    		
+		    		</div>
+
+		    	</div>
+
+			</div>
+
+			</div>
+
+		</section>
+	
+		<div id="socialnetwork" class="container text-center">
+
+			<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58ba67dfd178cf4d"></script> 
+
+			<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+			<div class="addthis_inline_share_toolbox"></div>
+
+		</div>
+	
+		<div id="footerlinks">
+			<div class="container">
+				<a href="https://github.com/nehakadam/AnyPicker/zipball/master">Download</a>
+				<a href="https://github.com/nehakadam/AnyPicker/wiki/Roadmap">Roadmap</a>
+				<a href="https://github.com/nehakadam/AnyPicker/releases">Changelog</a>
+				<a href="https://github.com/nehakadam/AnyPicker/issues">Report Bug</a>
 			</div>
 		</div>
 	
@@ -111,7 +763,7 @@
 			<div class="container">
 
 				<div class="footer-copyright col-xs-12 col-sm-12 col-md-6 col-lg-6">
-					<span> &copy; <span id="footer-year"></span> <a href="https://curioussolutions.in">Curious Solutions LLP</a>. All rights reserved.
+					<span> &copy; <span id="footer-year"></span> <a href="http://lajpatshah.in/">Lajpat Shah</a>. All rights reserved.
 					</span>
 				</div>
 
@@ -119,38 +771,28 @@
 
 					<span class="social-list">
 
-						<a class="facebook" href="https://www.facebook.com/CuriousSolutions">
+						<a class="facebook" href="http://www.facebook.com/curiouslala">
 							<i class="ap-po-icon-facebook"></i>
 						</a>
 					
-						<a class="twitter" href="https://twitter.com/curioussolns">
+						<a class="twitter" href="https://twitter.com/lajpat">
 							<i class="ap-po-icon-twitter"></i>
 						</a>
 					
-						<a class="google" href="https://plus.google.com/109034334884221703852/">
+						<a class="google" href="https://plus.google.com/100425525215161548641/posts">
 							<i class="ap-po-icon-google-plus"></i>
 						</a>
 					
-						<a class="linkedin" href="http://in.linkedin.com/company/curious-solutions"><i class="ap-po-icon-linkedin"></i></a>
+						<a class="linkedin" href="http://in.linkedin.com/in/lajpat"><i class="ap-po-icon-linkedin"></i></a>
 					
 						<a class="youtube" href="http://www.youtube.com/user/curiouslajpat">
 							<i class="ap-po-icon-youtube"></i>
 						</a>
 					
-						<a class="github" href="https://github.com/CuriousSolutions">
+						<a class="github" href="https://github.com/lajpatshah">
 							<i class="ap-po-icon-github"></i>
 						</a>
 					
-					</span>
-
-					<span>|</span>
-
-					<span class="">
-						<a href="https://curioussolutions.in/terms.htm">Terms </a>
-					</span>
-					<span>|</span>
-					<span class="">
-						<a href="https://curioussolutions.in/privacy.htm">Privacy</a>
 					</span>
 
 				</div>
@@ -159,6 +801,16 @@
 
 		</footer>
 
-	</body>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+			ga('create', 'UA-88053575-2', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	</body>
+	
 </html>
