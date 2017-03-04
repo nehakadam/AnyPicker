@@ -47,8 +47,17 @@ Files - Particular Version
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/<version>/i18n/anypicker-i18n.js"></script>
 ```
 
-## Author
+## Authors
 [Neha Kadam](https://github.com/nehakadam): Developer<br/> 
 [Lajpat Shah](https://github.com/lajpatshah): Concept & Design Contributor
+
+## Thank You
+- [All Contributors](https://github.com/nehakadam/DateTimePicker/contributors)
+
 <br/> <br/> 
-Copyright 2016 [Lajpat Shah](https://github.com/lajpatshah)
+
+Copyright 2017 [Lajpat Shah](https://github.com/lajpatshah)
+
+##License
+
+Licensed under the MIT License
