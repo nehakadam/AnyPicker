@@ -1,9 +1,7 @@
 {
     "name": "anypicker",
 
-    "version": "2.0.6",
-
-    "license" : "See License Information in LICENSE file",
+    "version": "2.0.7",
 
     "description": "AnyPicker is a customizable jQuery Picker Library for Mobile OS. Create custom mobile pickers (Date, Time, Rating etc) for iOS, Android & Windows. Use pre-built pickers like Date Picker, Time Picker, Date Time Picker, etc",
 
@@ -23,11 +21,9 @@
         "Rating"
     ],
 
-    "homepage": "https://curioussolutions.in/libraries/anypicker",
-
     "bugs": {
-        "url": "https://github.com/CuriousSolutions/AnyPicker/issues",
-        "email": "anypicker@curioussolutions.in"
+        "url": "https://github.com/nehakadam/AnyPicker/issues",
+        "email": "nehakadam9@gmail.com"
     },
 
     "author": "Neha Kadam <nehakadam9@gmail.com> (https://github.com/nehakadam)",
@@ -37,7 +33,15 @@
         "email": "nehakadam9@gmail.com"
     },
 
+    "homepage": "https://nehakadam.github.io/AnyPicker/",
+
     "main": "dist/anypicker.min.js",
+
+    "repository":
+    {
+        "type": "git",
+        "url": "git://github.com:nehakadam/AnyPicker.git"
+    },
 
     "peerDependencies": {
         "jquery": ">=1.0.0"
@@ -54,12 +58,10 @@
         "grunt-contrib-watch": "^0.6.0"
     },
 
-    "bugs": {
-        "url": "https://github.com/CuriousSolutions/AnyPicker/issues"
-    },
-
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
-    }
+    },
+    
+    "license": "MIT"
 
 }

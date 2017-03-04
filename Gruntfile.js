@@ -3,9 +3,10 @@ module.exports = function(grunt)
 	var sBanner = '/* ----------------------------------------------------------------------------- ' +
 	'\n\n  AnyPicker - Customizable Picker for Mobile OS' +
 	'\n  Version <%= pkg.version %>' + 
-	'\n  Copyright (c)<%= grunt.template.today("yyyy") %> Curious Solutions LLP' +
-	'\n  https://curioussolutions.in/libraries/anypicker/content/license.htm' +
-	'\n  See License Information in LICENSE file.' +
+	'\n  Copyright (c)<%= grunt.template.today("yyyy") %> Lajpat Shah' +
+	'\n  Contributors : https://github.com/nehakadam/AnyPicker/contributors' +
+	'\n  Repository : https://github.com/nehakadam/AnyPicker' +
+	'\n  Homepage : https://nehakadam.github.io/AnyPicker' +
 	'\n\n ----------------------------------------------------------------------------- */\n\n';
 
 	var sJSHeader = sBanner + "(function () {\n\n    \"use strict\";\n\n",

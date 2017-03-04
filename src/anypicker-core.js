@@ -1,10 +1,11 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.6
-  Copyright (c)2016 Curious Solutions LLP
-  https://curioussolutions.in/libraries/anypicker/content/license.htm
-  See License Information in LICENSE file.
+  Version 2.0.7
+  Copyright (c)2017 Lajpat Shah
+  Contributors : https://github.com/nehakadam/AnyPicker/contributors
+  Repository : https://github.com/nehakadam/AnyPicker
+  Homepage : https://nehakadam.github.io/AnyPicker
 
  ----------------------------------------------------------------------------- */
 
@@ -202,7 +203,9 @@ $.AnyPicker = $.AnyPicker || {
 		formatOutput: null, // ()
 
 		setOutput: null,
-		onSetOutput: null
+		onSetOutput: null,
+
+		buttonClicked: null 
 
 		//------------------ Callback Functions End --------------------------
 	},
@@ -1375,6 +1378,9 @@ AnyPicker.prototype = {
 
 		apo._setOutput();
 		apo.showOrHidePicker();
+
+		if($.CF.isValid(apo.setting.buttonClicked))
+			apo.setting.buttonClicked.call(apo, "set");
 	},
 
 	_clearButtonAction: function(e)
@@ -1392,6 +1398,9 @@ AnyPicker.prototype = {
 				$oInput.text("");
 		}
 		apo.showOrHidePicker();
+
+		if($.CF.isValid(apo.setting.buttonClicked))
+			apo.setting.buttonClicked.call(apo, "clear");
 	},
 
 	_nowButtonAction: function(e)
@@ -1403,12 +1412,18 @@ AnyPicker.prototype = {
 			apo.tmp.selectedDate = apo._getCurrentDate();
 			apo._setSelectedAndInvalidValuesForRows();
 		}
+
+		if($.CF.isValid(apo.setting.buttonClicked))
+			apo.setting.buttonClicked.call(apo, "now");
 	},
 
 	_cancelButtonAction: function(e)
 	{
 		var apo = e.data.apo;
 		apo.showOrHidePicker();
+
+		if($.CF.isValid(apo.setting.buttonClicked))
+			apo.setting.buttonClicked.call(apo, "cancel");
 	},
 
 	_getDeviceOrientation: function()
