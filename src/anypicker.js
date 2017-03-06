@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.7
+  Version 2.0.8
   Copyright (c)2017 Lajpat Shah
   Contributors : https://github.com/nehakadam/AnyPicker/contributors
   Repository : https://github.com/nehakadam/AnyPicker
@@ -3900,8 +3900,10 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		{
 			if(typeof oFormat === "string")
 				sArrFormat = apo._setDateTimeFormatComponentsArray(oFormat);
-			else
+			else if(typeof oFormat === "object")
 				sArrFormat = oFormat;
+			else
+				sArrFormat = (apo.tmp.diffDateTimeFormats ? apo.tmp.sArrInputDateTimeFormat : apo.tmp.sArrDateTimeFormat);
 		}
 		else
 			sArrFormat = (apo.tmp.diffDateTimeFormats ? apo.tmp.sArrInputDateTimeFormat : apo.tmp.sArrDateTimeFormat);
