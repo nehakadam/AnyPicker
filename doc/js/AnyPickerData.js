@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.8
+  Version 2.0.9
   Copyright (c)2017 Lajpat Shah
   Contributors : https://github.com/nehakadam/AnyPicker/contributors
   Repository : https://github.com/nehakadam/AnyPicker
@@ -619,9 +619,14 @@ var documentation = {
             "description": "Added a new functionality to set localized component labels. Modified Documentation."
         },
         {
-            "version": "2.0.7",
+            "version": "2.0.8",
             "date": "Mar 04, 2017",
             "description": "Added buttonClicked callback function. Changed Copyright Text and Repository URLs."
+        },
+        {
+            "version": "2.0.9",
+            "date": "Mar 13, 2017",
+            "description": "Fixed issue of Buttons not showing up for \"layout: fixed\" and \"theme: iOS\" when \"viewSections\" property is not set during plugin initialization process."
         }
     ]
 };

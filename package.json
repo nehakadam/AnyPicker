@@ -1,7 +1,7 @@
 {
     "name": "anypicker",
 
-    "version": "2.0.8",
+    "version": "2.0.9",
 
     "description": "AnyPicker is a customizable jQuery Picker Library for Mobile OS. Create custom mobile pickers (Date, Time, Rating etc) for iOS, Android & Windows. Use pre-built pickers like Date Picker, Time Picker, Date Time Picker, etc",
 
@@ -40,7 +40,7 @@
     "repository":
     {
         "type": "git",
-        "url": "git://github.com:nehakadam/AnyPicker.git"
+        "url": "https://github.com/nehakadam/AnyPicker.git"
     },
 
     "peerDependencies": {

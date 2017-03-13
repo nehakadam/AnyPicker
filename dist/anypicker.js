@@ -1,7 +1,7 @@
 /* ----------------------------------------------------------------------------- 
 
   AnyPicker - Customizable Picker for Mobile OS
-  Version 2.0.8
+  Version 2.0.9
   Copyright (c)2017 Lajpat Shah
   Contributors : https://github.com/nehakadam/AnyPicker/contributors
   Repository : https://github.com/nehakadam/AnyPicker
@@ -442,12 +442,24 @@ function AnyPicker(element, options)
 
 		if(!$.CF.isValid(options.viewSections))
 		{
-			apo.setting.viewSections = {
-				header: ["cancelButton", "headerTitle", "setButton"],
-				contentTop: [],
-				contentBottom: [],
-				footer: []
-			};
+			if($.CF.compareStrings(apo.setting.layout, "fixed"))
+			{
+				apo.setting.viewSections = {
+					header: [],
+					contentTop: [],
+					contentBottom: [],
+					footer: ["cancelButton", "headerTitle", "setButton"]
+				};
+			}
+			else
+			{
+				apo.setting.viewSections = {
+					header: ["cancelButton", "headerTitle", "setButton"],
+					contentTop: [],
+					contentBottom: [],
+					footer: []
+				};
+			}
 		}
 
 		if($.AnyPicker.extra.bIsiPad)

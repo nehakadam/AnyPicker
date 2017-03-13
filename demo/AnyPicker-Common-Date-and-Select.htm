@@ -4,7 +4,7 @@
 
 	<head>
 	
-		<title>Layout Fixed - AnyPicker</title>
+		<title>Basic Picker and DatePicker - AnyPicker</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="msapplication-tap-highlight" content="no" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -67,7 +67,7 @@
 		<script type="text/javascript" src="vendors/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="../src/anypicker.js"></script>
 		<script type="text/javascript" src="Currencies.js"></script>
-	
+
 		<script type="text/javascript">
 
 			var sArrCurrency = [];
@@ -84,15 +84,9 @@
 			        });
 			    }
 			}
-
+		
 			var io18n = {
 						headerTitle: "Select Currency"
-					},
-			soViewSections = {
-						header: ["headerTitle"],
-						contentTop: [],
-						contentBottom: [],
-						footer: ["cancelButton", "clearButton", "setButton"]
 					},
 			oArrComponents = [
 						{
@@ -107,7 +101,6 @@
 							data: sArrCurrency
 						}
 					];
-
 		
 			$(document).ready(function()
 			{
@@ -117,11 +110,7 @@
 				{
 					mode: "select",
 
-					layout: "fixed",
-
 					i18n: io18n,
-
-					viewSections: soViewSections,
 				
 					components: oArrComponents,
 
@@ -132,11 +121,7 @@
 				{
 					mode: "select",
 
-					layout: "fixed",
-
 					i18n: io18n,
-
-					viewSections: soViewSections,
 				
 					components: oArrComponents,
 
@@ -149,11 +134,7 @@
 				{
 					mode: "select",
 
-					layout: "fixed",
-
 					i18n: io18n,
-
-					viewSections: soViewSections,
 				
 					components: oArrComponents,
 
@@ -166,95 +147,55 @@
 				{
 					mode: "select",
 
-					layout: "fixed",
-
 					i18n: io18n,
-
-					viewSections: soViewSections,
 				
 					components: oArrComponents,
 
 					dataSource: oArrDataSource,
-
+				
 					theme: "Windows", // "Default", "iOS", "Android", "Windows"
+					
+					componentsCoverFullWidth: true
 				});
+
+
 
 				$("#ip-de-2").AnyPicker(
 				{
-					mode: "select",
+					mode: "datetime",
 
-					layout: "fixed",
-
-					vAlign: "top",
-
-					i18n: io18n,
-
-					viewSections: soViewSections,
-				
-					components: oArrComponents,
-
-					dataSource: oArrDataSource
+					dateTimeFormat: "MMMM d, yyyy"
 				});
 
 				$("#ip-ios-2").AnyPicker(
 				{
-					mode: "select",
+					mode: "datetime",
 
-					layout: "fixed",
-
-					vAlign: "top",
-
-					i18n: io18n,
-
-					viewSections: soViewSections,
-				
-					components: oArrComponents,
-
-					dataSource: oArrDataSource,
+					dateTimeFormat: "MMMM d, yyyy",
 
 					theme: "iOS" // "Default", "iOS", "Android", "Windows"
 				});
 
 				$("#ip-android-2").AnyPicker(
 				{
-					mode: "select",
-
-					layout: "fixed",
-
-					vAlign: "top",
-
-					i18n: io18n,
-
-					viewSections: soViewSections,
+					mode: "datetime",
 				
-					components: oArrComponents,
-
-					dataSource: oArrDataSource,
-
+					dateTimeFormat: "MMM dd, yyyy",
+				
 					theme: "Android" // "Default", "iOS", "Android", "Windows"
 				});
 
 				$("#ip-wp-2").AnyPicker(
 				{
-					mode: "select",
+					mode: "datetime",
 
-					layout: "fixed",
-
-					vAlign: "top",
-
-					i18n: io18n,
-
-					viewSections: soViewSections,
-				
-					components: oArrComponents,
-
-					dataSource: oArrDataSource,
+					dateTimeFormat: "MMM dd, yyyy",
 
 					theme: "Windows" // "Default", "iOS", "Android", "Windows"
 				});
-			
+
 			});
-	
+
 		</script>
 
 	</head>
@@ -265,7 +206,7 @@
         
         	<tr>
 
-        		<td>Currency : (Default - Bottom)</td>
+        		<td>Currency : (Default)</td>
 
         	</tr>
 
@@ -279,7 +220,7 @@
 
         	<tr>
 
-        		<td>Currency : (iOS - Bottom)</td>
+        		<td>Currency : (iOS)</td>
 
         	</tr>
 
@@ -293,7 +234,7 @@
 
         	<tr>
 
-        		<td>Currency : (Android - Bottom)</td>
+        		<td>Currency : (Android)</td>
 
         	</tr>
 
@@ -307,7 +248,7 @@
 
         	<tr>
 
-        		<td>Currency : (Windows - Bottom)</td>
+        		<td>Currency : (Windows)</td>
 
         	</tr>
 
@@ -319,58 +260,59 @@
         
         	</tr>
 
+
         	<tr>
 
-        		<td>Currency : (Default - Top)</td>
+        		<td>Date : (Default) </td>
 
         	</tr>
 
         	<tr>
 
             	<td>
-            		<input type="text" id="ip-de-2" value="₹ - INR" readonly />
+            		<input type="text" id="ip-de-2" readonly>
             	</td>
         
         	</tr>
 
         	<tr>
 
-        		<td>Currency : (iOS - Top)</td>
+        		<td>Date : (iOS) </td>
 
         	</tr>
 
         	<tr>
 
             	<td>
-            		<input type="text" id="ip-ios-2" value="₹ - INR" readonly />
+            		<input type="text" id="ip-ios-2" readonly>
             	</td>
         
         	</tr>
 
         	<tr>
 
-        		<td>Currency : (Android - Top)</td>
+        		<td>Date : (Android) </td>
 
         	</tr>
 
         	<tr>
 
             	<td>
-            		<input type="text" id="ip-android-2" value="₹ - INR" readonly />
+            		<input type="text" id="ip-android-2" readonly>
             	</td>
         
         	</tr>
 
         	<tr>
 
-        		<td>Currency : (Windows - Top)</td>
+        		<td>Date : (Windows) </td>
 
         	</tr>
 
         	<tr>
 
             	<td>
-            		<input type="text" id="ip-wp-2" value="₹ - INR" readonly />
+            		<input type="text" id="ip-wp-2" readonly>
             	</td>
         
         	</tr>
