@@ -27,24 +27,24 @@ You can use AnyPicker in your
   `bower install anypicker`
 
 ##CDN
-[AnyPicker is hosted on jsDelivr](http://www.jsdelivr.com/projects/jquery.anypicker).
+[AnyPicker is hosted on jsDelivr](https://www.jsdelivr.com/package/npm/anypicker).
 
 Files - Latest
 
 ```
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.anypicker/latest/anypicker-all.min.css" />
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/latest/anypicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/anypicker@latest/dist/anypicker-all.min.css" />
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/anypicker@latest/dist/anypicker.min.js"></script>
 <!-- For i18n -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/latest/i18n/anypicker-i18n.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/anypicker@latest/dist/i18n/anypicker-i18n.js"></script>
 ```
 
 Files - Particular Version
 
 ```
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.anypicker/<version>/anypicker-all.min.css" />
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/<version>/anypicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/anypicker@<version>/dist/anypicker-all.min.css" />
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/anypicker@<version>/dist/anypicker.min.js"></script>
 <!-- For i18n -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.anypicker/<version>/i18n/anypicker-i18n.js"></script>
+<script type="text/javascript" src=//cdn.jsdelivr.net/npm/anypicker@<version>/dist/i18n/anypicker-i18n.js"></script>
 ```
 
 ## Authors
