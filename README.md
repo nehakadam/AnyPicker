@@ -44,7 +44,7 @@ Files - Particular Version
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/anypicker@<version>/dist/anypicker-all.min.css" />
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/anypicker@<version>/dist/anypicker.min.js"></script>
 <!-- For i18n -->
-<script type="text/javascript" src=//cdn.jsdelivr.net/npm/anypicker@<version>/dist/i18n/anypicker-i18n.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/anypicker@<version>/dist/i18n/anypicker-i18n.js"></script>
 ```
 
 ## Authors
