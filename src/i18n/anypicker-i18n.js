@@ -436,7 +436,7 @@
 		setButton: "OK",
 		clearButton: "Claro",
 		nowButton: "Ahora",
-		cancelButton: "Cancelar",
+		cancelButton: "Limpiar",
 		dateSwitch: "Fecha",
 		timeSwitch: "Hora",
 
