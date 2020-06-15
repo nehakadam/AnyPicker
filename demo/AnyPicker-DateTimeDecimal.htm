@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Decimal - AnyPicker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <style type="text/css">
+
+            body
+            {
+                margin: 0px;
+            }
+
+            .input-cont
+            {
+                width: 300px;
+                padding: 20px;
+            }
+
+            input
+            {
+                width: 200px;
+                height: 30px;
+                padding: 3px 10px;
+
+                margin-bottom: 16px;
+            }
+
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="/static/picker/anypicker-font.css" />
+        <link rel="stylesheet" type="text/css" href="/static/picker/anypicker.css" />
+
+        <link rel="stylesheet" type="text/css" href="/static/picker/anypicker-ios.css" />
+        <link rel="stylesheet" type="text/css" href="/static/picker/anypicker-android.css" />
+        <link rel="stylesheet" type="text/css" href="/static/picker/anypicker-windows.css" />
+
+        <script type="text/javascript" src="/static/picker/jquery-1.11.1.min.js"></script>
+
+
+        <script type="text/javascript" src="/static/picker/anypicker-include-decimal.js"></script>
+        <!--
+        <script type="text/javascript" src="/static/picker/anypicker.js"></script>
+        -->
+
+        <script type="text/javascript">
+
+            var oAP1, oAP2;
+            var dSetDecimal, dMinDecimal, dMaxDecimal, sSetDecimal, sMinDecimal, sMaxDecimal;
+            // ######### time picker BEGIN
+            var dStartD, dEndD, sStartD, sEndD, sFormatDecimal;
+
+            dStartD = new Date(2015, 9, 20, 10, 0, 0, 0);
+            dEndD = new Date(2015, 9, 20, 19, 0, 0, 0);
+            // ######### time picker END
+
+            dSetDecimal = 10.7
+            dMinDecimal = 0.6;
+            dMaxDecimal = 25.3;
+            sFormatDecimal = "nn.d"
+
+            jQuery(document).ready(function()
+            {
+
+                // ####### time picker BEGIN
+                jQuery("#ip-start-date").AnyPicker(
+                {
+                    mode: "datetime",
+
+                    inputDateTimeFormat: "hh:mm AA",
+                    dateTimeFormat: "hh:mm AA",
+
+                    onInit: function()
+                    {
+                        oAP1 = this;
+                        sEndD = oAP1.formatOutputDates(dEndD, "hh:mm AA");
+                        oAP1.setMaximumDate(sEndD);
+                        oAP1.setSelectedDate(dStartD);
+
+                    },
+
+                    onSetOutput: function(sOutput, oSelectedValues, nothing ,selectedValuePlusOne)
+                    {
+                        sStartD = sOutput;
+                        oAP2.setMinimumDate(selectedValuePlusOne);
+                    }
+                });
+
+                jQuery("#ip-end-date").AnyPicker(
+                {
+                    mode: "datetime",
+
+                    inputDateTimeFormat: "hh:mm AA",
+                    dateTimeFormat: "hh:mm AA",
+
+                    onInit: function()
+                    {
+                        oAP2 = this;
+
+                        sStartD = oAP2.formatOutputDates(dStartD);
+                        oAP2.setMinimumDate(sStartD);
+                        oAP2.setSelectedDate(dEndD);
+                    },
+
+                    onSetOutput: function(sOutput, oSelectedValues)
+                    {
+                        sEndD = sOutput;
+                        oAP1.setMaximumDate(sEndD);
+                    }
+                });
+                // ######## time picker END
+
+                jQuery("#ip-decimal").AnyPicker(
+                {
+                    mode: "decimal",
+
+                    inputDecimalFormat: "nn.d",
+                    DecimalFormat: "nn.d",
+
+                    onInit: function()
+                    {
+                        oAP3 = this;
+
+                        sMaxDecimal = oAP3.formatOutputDecimals(dMaxDecimal, sFormatDecimal);
+                        sMinDecimal = oAP3.formatOutputDecimals(dMinDecimal, sFormatDecimal);
+
+                        oAP3.setMaximumDecimal(sMaxDecimal);
+                        oAP3.setMinimumDecimal(sMinDecimal);
+
+                        sSetDecimal = oAP3.formatOutputDecimals(dSetDecimal, sFormatDecimal);
+
+                        oAP3.setSelectedDecimal(sSetDecimal);
+
+                        sMaxDecimal = dMaxDecimal
+                        sMinDecimal = dMinDecimal
+                    },
+                	
+                    onSetOutput: function(sOutput, oSelectedValues)
+                    {
+                        //sMinDecimal = sOutput;
+                    }
+                });
+
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <table class="input-cont">
+
+            <tr>
+
+                <td>Start Date : </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <input type="text" id="ip-start-date" readonly>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>End Date : </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <input type="text" id="ip-end-date" readonly>
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Setpoint : </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <input type="text" id="ip-decimal" readonly>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </body>
+
+</html>
