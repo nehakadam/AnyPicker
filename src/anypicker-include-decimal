@@ -4831,8 +4831,11 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 
 		dNewSelectedDate = apo.setDateInFormat({"iDate": oNewSelectedDate}, "");
 		if(bGetObject)
+		{
 			return [dNewSelectedDate, oArrSelectedValues];
+		}
 		else
+		{
 			return dNewSelectedDate;
 		}
 	},
