@@ -288,6 +288,16 @@ AnyPicker.prototype = $.extend(AnyPicker.prototype, {
 		else
 		{
 			apo.tmp.selectedDate = new Date($.AnyPicker.extra.dToday);
+			
+			if (apo.setting.intervals.h !== undefined && apo.tmp.selectedDate.getHours() % apo.setting.intervals.h !== 0) {
+				apo.tmp.selectedDate.setHours(0);
+			}
+			if (apo.setting.intervals.m !== undefined && apo.tmp.selectedDate.getMinutes() % apo.setting.intervals.m !== 0) {
+				apo.tmp.selectedDate.setMinutes(0);
+			}
+			if (apo.setting.intervals.s !== undefined && apo.tmp.selectedDate.getSeconds() % apo.setting.intervals.s !== 0) {
+				apo.tmp.selectedDate.setSeconds(0);
+			}
 		}
 	},
 
